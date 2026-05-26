@@ -1,0 +1,1189 @@
+{
+  "meta": {
+    "last_updated": "2026-05-26",
+    "languages": [
+      "ko",
+      "en",
+      "de"
+    ]
+  },
+  "personal": {
+    "ko": {
+      "name": "정성윤",
+      "title": "전임연구원, 전남대학교 5·18연구소 | 박사수료, Martin-Luther-Universität Halle-Wittenberg",
+      "email": "sungyounchung@gmail.com",
+      "phone": "+82 10 9517 1782",
+      "interests": [
+        "기억, 기념 공간, 국가폭력과 역사화",
+        "정치 프로그램과 사적 자율성 간의 긴장",
+        "비언어적 재현·신체문화·무용·퍼포먼스"
+      ]
+    },
+    "en": {
+      "name": "Sungyoun Chung",
+      "title": "Research Fellow, May 18 Institute, Chonnam National University | Ph.D. Candidate, Martin-Luther-Universität Halle-Wittenberg",
+      "email": "sungyounchung@gmail.com",
+      "phone": "+82 10 9517 1782",
+      "interests": [
+        "Memory, memorial sites, state violence and historicization",
+        "Tension between political program and private autonomy",
+        "Nonverbal representation, body culture, dance, and performance"
+      ]
+    },
+    "de": {
+      "name": "Sungyoun Chung",
+      "title": "Wissenschaftlicher Mitarbeiter, Mai-18-Institut, Chonnam National University | Doktorand, Martin-Luther-Universität Halle-Wittenberg",
+      "email": "sungyounchung@gmail.com",
+      "phone": "+82 10 9517 1782",
+      "interests": [
+        "Erinnerung, Gedenkstätten, Staatsgewalt und Historisierung",
+        "Spannungsverhältnis zwischen politischem Programm und privater Autonomie",
+        "Nonverbale Repräsentation, Körperkultur, Tanz und Performance"
+      ]
+    }
+  },
+  "education": [
+    {
+      "id": "edu-01",
+      "period": "2018–present",
+      "tags": [
+        "history",
+        "memory",
+        "germany"
+      ],
+      "ko": {
+        "degree": "박사 (수료)",
+        "field": "역사학",
+        "institution": "Martin-Luther-Universität Halle-Wittenberg",
+        "location": "할레, 독일"
+      },
+      "en": {
+        "degree": "Ph.D. Candidate",
+        "field": "History",
+        "institution": "Martin-Luther-Universität Halle-Wittenberg",
+        "location": "Halle, Germany"
+      },
+      "de": {
+        "degree": "Doktorat",
+        "field": "Geschichte",
+        "institution": "Martin-Luther-Universität Halle-Wittenberg",
+        "location": "Halle, Deutschland"
+      }
+    },
+    {
+      "id": "edu-02",
+      "period": "2017",
+      "tags": [
+        "history",
+        "memory",
+        "germany",
+        "commemoration"
+      ],
+      "ko": {
+        "degree": "문학석사",
+        "field": "사학",
+        "institution": "고려대학교",
+        "location": "서울, 한국",
+        "thesis": "독일 국립 추도시설 노이에 바헤의 보편성과 특수성"
+      },
+      "en": {
+        "degree": "M.A.",
+        "field": "History",
+        "institution": "Korea University",
+        "location": "Seoul, South Korea",
+        "thesis": "Universality and Specificity of Germany's National Memorial Space, Neue Wache"
+      },
+      "de": {
+        "degree": "M.A.",
+        "field": "Geschichte",
+        "institution": "Korea University",
+        "location": "Seoul, Südkorea",
+        "thesis": "Universalität und Spezifikum der nationalen Gedenkstätte Deutschlands, Neue Wache"
+      }
+    },
+    {
+      "id": "edu-03",
+      "period": "2015–2016",
+      "tags": [
+        "history",
+        "comparative-studies",
+        "germany",
+        "japan",
+        "korea"
+      ],
+      "ko": {
+        "degree": "공동석사학위과정 (한국, 일본, 독일)",
+        "field": "TEACH (Transnational European and East Asian Culture and History)",
+        "institution": "고려대학교 · 쓰쿠바대학교 · 본대학교",
+        "location": "서울·쓰쿠바·본"
+      },
+      "en": {
+        "degree": "Joint Master's Degree Program (Korea, Japan, Germany)",
+        "field": "TEACH (Transnational European and East Asian Culture and History)",
+        "institution": "Korea University · University of Tsukuba · Universität Bonn",
+        "location": "Seoul · Tsukuba · Bonn"
+      },
+      "de": {
+        "degree": "Joint Master's Degree Program (Korea, Japan, Germany)",
+        "field": "TEACH (Transnational European and East Asian Culture and History)",
+        "institution": "Korea University · Universität Tsukuba · Universität Bonn",
+        "location": "Seoul · Tsukuba · Bonn"
+      }
+    },
+    {
+      "id": "edu-04",
+      "period": "2014",
+      "tags": [
+        "history",
+        "korea"
+      ],
+      "ko": {
+        "degree": "문학사",
+        "field": "사학·정치외교학",
+        "institution": "고려대학교",
+        "location": "서울, 한국"
+      },
+      "en": {
+        "degree": "B.A.",
+        "field": "History and Political Science",
+        "institution": "Korea University",
+        "location": "Seoul, South Korea"
+      },
+      "de": {
+        "degree": "B.A.",
+        "field": "Geschichte und Politikwissenschaft",
+        "institution": "Korea University",
+        "location": "Seoul, Südkorea"
+      }
+    }
+  ],
+  "research": [
+    {
+      "id": "res-01",
+      "period": "2026",
+      "tags": [
+        "518",
+        "korea",
+        "memory",
+        "comparative-studies"
+      ],
+      "ko": {
+        "title": "K-Democracy on the Road 제3회 프로그램 기획 및 진행",
+        "role": "오거나이저",
+        "institution": "전남대학교 5·18연구소 주최, 광주",
+        "date": "2026.5.15."
+      },
+      "en": {
+        "title": "K-Democracy on the Road (3rd Edition)",
+        "role": "Organizer",
+        "institution": "May 18 Institute, Chonnam National University, Gwangju",
+        "date": "15 May 2026"
+      },
+      "de": {
+        "title": "K-Democracy on the Road (3. Ausgabe)",
+        "role": "Organisatorin",
+        "institution": "Mai-18-Institut, Chonnam National University, Gwangju",
+        "date": "15. Mai 2026"
+      }
+    },
+    {
+      "id": "res-02",
+      "period": "2026",
+      "tags": [
+        "518",
+        "korea",
+        "memory",
+        "transitional-justice"
+      ],
+      "ko": {
+        "title": "제3회 5·18연구자대회 젠더 세션·사회비판 세션 기획",
+        "role": "오거나이저",
+        "institution": "전남대학교 5·18연구소 주최, 광주",
+        "date": "2026.5.21–22."
+      },
+      "en": {
+        "title": "3rd May 18 Researchers' Conference — Gender & Social Critique Sessions",
+        "role": "Organizer",
+        "institution": "May 18 Institute, Chonnam National University, Gwangju",
+        "date": "21–22 May 2026"
+      },
+      "de": {
+        "title": "3. Konferenz der 5·18-Forschenden — Gender- und gesellschaftskritische Sektion",
+        "role": "Organisatorin",
+        "institution": "Mai-18-Institut, Chonnam National University, Gwangju",
+        "date": "21.–22. Mai 2026"
+      }
+    },
+    {
+      "id": "res-03",
+      "period": "2026",
+      "tags": [
+        "history",
+        "comparative-studies",
+        "korea",
+        "japan"
+      ],
+      "ko": {
+        "title": "Symposium: East Asian Student and Youth Movements in Comparative Perspective",
+        "role": "오거나이징 스태프",
+        "institution": "전남대학교 5·18연구소 주최, 광주",
+        "date": "2026.5.18–19."
+      },
+      "en": {
+        "title": "Symposium: East Asian Student and Youth Movements in Comparative Perspective",
+        "role": "Organizing Staff",
+        "institution": "May 18 Institute, Chonnam National University, Gwangju",
+        "date": "18–19 May 2026"
+      },
+      "de": {
+        "title": "Symposium: East Asian Student and Youth Movements in Comparative Perspective",
+        "role": "Organisationsteam",
+        "institution": "Mai-18-Institut, Chonnam National University, Gwangju",
+        "date": "18.–19. Mai 2026"
+      }
+    },
+    {
+      "id": "res-04",
+      "period": "2013–2014",
+      "tags": [
+        "performing-arts",
+        "dance",
+        "korea"
+      ],
+      "ko": {
+        "title": "출판기획 참여 및 원고 편집",
+        "role": "편집자",
+        "institution": "국립현대무용단"
+      },
+      "en": {
+        "title": "Publication Planning and Manuscript Editing",
+        "role": "Editor",
+        "institution": "Korean National Contemporary Dance Company"
+      },
+      "de": {
+        "title": "Publikationsplanung und Manuskriptredaktion",
+        "role": "Redakteurin",
+        "institution": "Koreanische Nationale Zeitgenössische Tanzkompanie"
+      }
+    },
+    {
+      "id": "res-05",
+      "period": "2010",
+      "tags": [
+        "cultural-studies",
+        "korea"
+      ],
+      "ko": {
+        "title": "출판기획 참여 및 원고 편집",
+        "role": "편집자",
+        "institution": "경기문화재단"
+      },
+      "en": {
+        "title": "Publication Planning and Manuscript Editing",
+        "role": "Editor",
+        "institution": "Gyeonggi Cultural Foundation"
+      },
+      "de": {
+        "title": "Publikationsplanung und Manuskriptredaktion",
+        "role": "Redakteurin",
+        "institution": "Gyeonggi Cultural Foundation"
+      }
+    },
+    {
+      "id": "res-06",
+      "period": "2009",
+      "tags": [
+        "performing-arts",
+        "korea",
+        "data"
+      ],
+      "ko": {
+        "title": "공연예술실태조사",
+        "role": "연구보조원",
+        "institution": "문화체육관광부 (연구책임자: 박성혜)"
+      },
+      "en": {
+        "title": "Survey of Performing Arts Status",
+        "role": "Research Assistant",
+        "institution": "Ministry of Culture, Sports and Tourism (PI: Park Sung-Hye)"
+      },
+      "de": {
+        "title": "Erhebung zum Stand der darstellenden Künste",
+        "role": "Wissenschaftliche Hilfskraft",
+        "institution": "Ministerium für Kultur, Sport und Tourismus (Leitung: Park Sung-Hye)"
+      }
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub-01",
+      "type": "journal",
+      "year": "2026",
+      "status": "under-review",
+      "tags": [
+        "518",
+        "korea",
+        "data",
+        "digital-humanities",
+        "memory"
+      ],
+      "ko": {
+        "authors": "정성윤",
+        "title": "이론 주도적 인문 데이터 구축하기: 5·18 공식 기념 연설 코퍼스 사례",
+        "journal": "민주주의와 인권",
+        "volume": "Vol.26 No.2"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Theory-driven Humanities Data Construction: The Case of the May 18 Official Commemorative Speech Corpus",
+        "journal": "Minjujuuiwa Inkkwon (Democracy and Human Rights)",
+        "volume": "Vol.26 No.2"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Theoriegeleiteter Aufbau geisteswissenschaftlicher Daten: Der Fall des Korpus offizieller 5·18-Gedenkreden",
+        "journal": "Minjujuuiwa Inkkwon",
+        "volume": "Bd.26 Nr.2"
+      }
+    },
+    {
+      "id": "pub-02",
+      "type": "journal",
+      "year": "2026",
+      "status": "accepted",
+      "tags": [
+        "518",
+        "korea",
+        "memory",
+        "transitional-justice",
+        "comparative-studies"
+      ],
+      "ko": {
+        "authors": "정성윤",
+        "title": "5·18 공식 기념 연설의 담론 구조 비교: 이행기정의 담론의 정권별 분화",
+        "journal": "기억과 전망",
+        "volume": "No.55"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Comparative Analysis of Discourse Structures in Official May 18 Commemorative Speeches: Regime-specific Differentiation of Transitional Justice Discourse",
+        "journal": "Memory and Prospect",
+        "volume": "No.55"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Vergleichende Analyse der Diskursstrukturen in offiziellen Gedenkreden zum 18. Mai: Regimespezifische Differenzierung des Transitional-Justice-Diskurses",
+        "journal": "Gieok gwa Jeonmang",
+        "volume": "Nr.55"
+      }
+    },
+    {
+      "id": "pub-03",
+      "type": "journal",
+      "year": "2026",
+      "status": "accepted",
+      "tags": [
+        "memory",
+        "commemoration",
+        "germany",
+        "cultural-studies",
+        "comparative-studies"
+      ],
+      "ko": {
+        "authors": "김수진·정성윤",
+        "title": "베를린 도심부 '기억의 장소'의 재맥락화와 문화자본으로의 전환",
+        "journal": "도시연구",
+        "volume": "No.29"
+      },
+      "en": {
+        "authors": "Kim, Sujin and Chung, Sungyoun",
+        "title": "Recontextualization of 'Sites of Memory' in Downtown Berlin and their Transformation into Cultural Capital",
+        "journal": "Dosi Yeongu (Urban Studies)",
+        "volume": "No.29"
+      },
+      "de": {
+        "authors": "Kim, Sujin und Chung, Sungyoun",
+        "title": "Rekontextualisierung der Erinnerungsorte in der Berliner Innenstadt und ihre Transformation zu Kulturkapital",
+        "journal": "Dosi Yeongu",
+        "volume": "Nr.29"
+      }
+    },
+    {
+      "id": "pub-04",
+      "type": "journal",
+      "year": "2025",
+      "status": "published",
+      "tags": [
+        "dance",
+        "germany",
+        "history",
+        "weimar",
+        "body-culture",
+        "cultural-studies"
+      ],
+      "ko": {
+        "authors": "정성윤",
+        "title": "'새로운 고전성'의 시작 ― 1929년 발터 베르텐이 기록한 독일 무용의 전환기",
+        "journal": "한국무용학회지",
+        "volume": "Vol.25 No.4"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "The Beginning of a 'New Classicism': Walter Berten's Account of a Turning Point in German Dance in 1929",
+        "journal": "Journal of the Korean Dance Studies Association",
+        "volume": "Vol.25 No.4"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Der Beginn einer neuen Klassizität: Walter Bertens Beschreibung des Wendepunkts im deutschen Tanz 1929",
+        "journal": "Journal of the Korean Dance Studies Association",
+        "volume": "Bd.25 Nr.4"
+      }
+    },
+    {
+      "id": "pub-05",
+      "type": "journal",
+      "year": "2025",
+      "status": "published",
+      "tags": [
+        "518",
+        "korea",
+        "memory",
+        "transitional-justice",
+        "comparative-studies"
+      ],
+      "ko": {
+        "authors": "정성윤",
+        "title": "용서 없는 화해는 가능한가: 한국 용서 화해 담론의 개념적 모순 분석",
+        "journal": "민주주의와 인권",
+        "volume": "Vol.25 No.4"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Can Reconciliation Exist without Forgiveness? Analyzing Conceptual Contradictions in Korean Forgiveness-Reconciliation Discourse",
+        "journal": "Minjujuuiwa Inkkwon (Democracy and Human Rights)",
+        "volume": "Vol.25 No.4"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Versöhnung ohne Vergebung? Konzeptuelle Widersprüche im koreanischen Versöhnungsdiskurs",
+        "journal": "Minjujuuiwa Inkkwon",
+        "volume": "Bd.25 Nr.4"
+      }
+    },
+    {
+      "id": "pub-06",
+      "type": "journal",
+      "year": "2021",
+      "status": "published",
+      "tags": [
+        "body-culture",
+        "cultural-studies",
+        "performing-arts",
+        "korea"
+      ],
+      "ko": {
+        "authors": "정성윤",
+        "title": "신체와 수행성을 통해 읽는 문화",
+        "journal": "오늘의 문예비평",
+        "volume": "Nr.123"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Cultural Phenomena through Body Culture and Performativity",
+        "journal": "Literary Criticism Today",
+        "volume": "No.123"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Kulturelle Phänomene durch Körperkultur und Performativität",
+        "journal": "Literary Criticism Today",
+        "volume": "Nr.123"
+      }
+    },
+    {
+      "id": "pub-07",
+      "type": "journal",
+      "year": "2019",
+      "status": "published",
+      "tags": [
+        "memory",
+        "commemoration",
+        "korea",
+        "japan",
+        "comparative-studies"
+      ],
+      "ko": {
+        "authors": "정성윤",
+        "title": "유엔기념공원의 중층적 정체성과 발전 방안",
+        "journal": "항도부산",
+        "volume": "Nr.38"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Multi-layered Identity of the UN Memorial Cemetery and Suggestions for its Improvement",
+        "journal": "Hangdo-Busan",
+        "volume": "No.38"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Die vielschichtige Identität des UN-Gedächtnisfriedhofs und Vorschläge zu seiner Weiterentwicklung",
+        "journal": "Hangdo-Busan",
+        "volume": "Nr.38"
+      }
+    },
+    {
+      "id": "pub-08",
+      "type": "book-chapter",
+      "year": "2021",
+      "status": "published",
+      "tags": [
+        "dance",
+        "germany",
+        "history",
+        "weimar",
+        "body-culture",
+        "cultural-studies"
+      ],
+      "doi": "https://doi.org/10.14220/9783737013802.319",
+      "ko": {
+        "authors": "Chung, Sungyoun",
+        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
+        "journal": "V&R Unipress (in: Baader/Kenkmann Hrg., Jugendbewegung im Kalten Krieg, Göttingen)"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
+        "journal": "V&R Unipress (in: Baader/Kenkmann eds., Jugendbewegung im Kalten Krieg, Göttingen)"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
+        "journal": "V&R Unipress (in: Baader/Kenkmann Hrg., Jugendbewegung im Kalten Krieg, Göttingen)"
+      }
+    },
+    {
+      "id": "pub-09",
+      "type": "magazine",
+      "year": "2023",
+      "status": "published",
+      "tags": [
+        "memory",
+        "commemoration",
+        "korea",
+        "japan",
+        "comparative-studies"
+      ],
+      "ko": {
+        "authors": "Chung, Sungyoun",
+        "title": "Ein Friedhof für elf Nationen. Einzige Kriegsgräberstätte der Vereinten Nationen liegt in Busan in Südkorea",
+        "journal": "FRIEDEN",
+        "volume": "Vol.2, S.26–27"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Ein Friedhof für elf Nationen. Einzige Kriegsgräberstätte der Vereinten Nationen liegt in Busan in Südkorea",
+        "journal": "FRIEDEN",
+        "volume": "Vol.2, pp.26–27"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Ein Friedhof für elf Nationen. Einzige Kriegsgräberstätte der Vereinten Nationen liegt in Busan in Südkorea",
+        "journal": "FRIEDEN",
+        "volume": "Bd.2, S.26–27"
+      }
+    },
+    {
+      "id": "pub-10",
+      "type": "magazine",
+      "year": "2017",
+      "status": "published",
+      "tags": [
+        "performing-arts",
+        "dance",
+        "korea",
+        "cultural-studies"
+      ],
+      "ko": {
+        "authors": "Chung, Sungyoun",
+        "title": "Südkorea – Zensur und schwarze Listen",
+        "journal": "Tanz – Zeitschrift für Ballet, Tanz und Performance, Theaterverlag, Berlin",
+        "volume": "Juli 2017"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Südkorea – Zensur und schwarze Listen",
+        "journal": "Tanz – Zeitschrift für Ballet, Tanz und Performance, Theaterverlag, Berlin",
+        "volume": "July 2017"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Südkorea – Zensur und schwarze Listen",
+        "journal": "Tanz – Zeitschrift für Ballet, Tanz und Performance, Theaterverlag, Berlin",
+        "volume": "Juli 2017"
+      }
+    },
+    {
+      "id": "pub-11",
+      "type": "thesis",
+      "year": "2014",
+      "status": "published",
+      "tags": [
+        "memory",
+        "commemoration",
+        "germany",
+        "history",
+        "comparative-studies"
+      ],
+      "ko": {
+        "authors": "정성윤",
+        "title": "독일 국립 추도시설 노이에 바헤의 보편성과 특수성",
+        "journal": "고려대학교 석사학위논문"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Universality and Specificity of Germany's National Memorial Space, Neue Wache",
+        "journal": "M.A. thesis, Korea University"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Universalität und Spezifikum der nationalen Gedenkstätte Deutschlands, Neue Wache",
+        "journal": "Masterarbeit, Korea University"
+      }
+    }
+  ],
+  "presentations": [
+    {
+      "id": "pre-01",
+      "year": "2026",
+      "type": "conference",
+      "tags": [
+        "memory",
+        "518",
+        "korea",
+        "japan",
+        "transitional-justice",
+        "comparative-studies"
+      ],
+      "confirmed": true,
+      "ko": {
+        "title": "보편적 기억이 실패할 때: 광주, 위안부, 그리고 이행기 정의와 코스모폴리탄 기억에 대한 탈식민적 비판",
+        "event": "동아시아 국제학술회의",
+        "location": "삿포로대학, 삿포로",
+        "date": "2026.9.12."
+      },
+      "en": {
+        "title": "When Universal Memory Fails: Gwangju, Comfort Women, and a Decolonial Critique of Transitional Justice and Cosmopolitan Memory",
+        "event": "East Asian International Academic Conference",
+        "location": "Sapporo University, Sapporo",
+        "date": "12 Sep 2026"
+      },
+      "de": {
+        "title": "Wenn das universelle Gedächtnis versagt: Gwangju, Trostfrauen und eine dekoloniale Kritik an Transitional Justice und kosmopolitischem Gedächtnis",
+        "event": "Internationale Ostasien-Konferenz",
+        "location": "Universität Sapporo, Sapporo",
+        "date": "12. Sep. 2026"
+      }
+    },
+    {
+      "id": "pre-02",
+      "year": "2026",
+      "type": "conference",
+      "tags": [
+        "memory",
+        "518",
+        "korea",
+        "japan",
+        "transitional-justice",
+        "comparative-studies"
+      ],
+      "confirmed": true,
+      "ko": {
+        "title": "보편적 기억이 실패할 때: 광주, 위안부, 그리고 이행기 정의와 코스모폴리탄 기억에 대한 탈식민적 비판",
+        "event": "제13회 세계한국학대회",
+        "location": "리츠메이칸대학, 교토",
+        "date": "2026.9.5–6."
+      },
+      "en": {
+        "title": "When Universal Memory Fails: Gwangju, Comfort Women, and a Decolonial Critique of Transitional Justice and Cosmopolitan Memory",
+        "event": "13th World Congress of Korean Studies",
+        "location": "Ritsumeikan University, Kyoto",
+        "date": "5–6 Sep 2026"
+      },
+      "de": {
+        "title": "Wenn das universelle Gedächtnis versagt (s.o.)",
+        "event": "13. Weltkongress der Koreanistik",
+        "location": "Ritsumeikan-Universität, Kyoto",
+        "date": "5.–6. Sep. 2026"
+      }
+    },
+    {
+      "id": "pre-03",
+      "year": "2026",
+      "type": "symposium",
+      "tags": [
+        "dance",
+        "body-culture",
+        "korea",
+        "germany",
+        "cultural-studies"
+      ],
+      "confirmed": true,
+      "ko": {
+        "title": "아카이브로 읽는 번역된 몸: 독일에서의 한국 무용과 이애주",
+        "event": "이애주춤아카이브 오픈 기념 학술토론회",
+        "date": "2026.5.7."
+      },
+      "en": {
+        "title": "The Translated Body Read through the Archive: Korean Dance in Germany and Lee Ae-ju",
+        "event": "Academic Symposium for the Opening of the Lee Ae-ju Dance Archive",
+        "date": "7 May 2026"
+      },
+      "de": {
+        "title": "Der übersetzte Körper im Archiv: Koreanischer Tanz in Deutschland und Lee Ae-ju",
+        "event": "Wissenschaftliches Symposium zur Eröffnung des Lee Ae-ju Tanzarchivs",
+        "date": "7. Mai 2026"
+      }
+    },
+    {
+      "id": "pre-04",
+      "year": "2024",
+      "type": "conference",
+      "tags": [
+        "518",
+        "memory",
+        "commemoration",
+        "korea",
+        "germany",
+        "comparative-studies"
+      ],
+      "ko": {
+        "title": "깨어 있는 기념 — 1980년부터 2024년까지 광주에서 기억의 형식들",
+        "event": "5.18기념재단–에터스베르크재단 공동학술대회: 독재에서 민주주의로",
+        "date": "2024.11.1."
+      },
+      "en": {
+        "title": "Wakeful Commemoration: Forms of Memory in Gwangju from 1980 to 2024",
+        "event": "Joint Conference May 18 Foundation & Ettersberg Foundation: From Dictatorship to Democracy",
+        "date": "1 Nov 2024"
+      },
+      "de": {
+        "title": "Wachsames Gedenken: Formen der Erinnerung in Gwangju von 1980 bis 2024",
+        "event": "Gemeinsame Konferenz der Mai-18-Stiftung und der Ettersberg-Stiftung: Von der Diktatur zur Demokratie",
+        "date": "1. Nov. 2024"
+      }
+    },
+    {
+      "id": "pre-05",
+      "year": "2021",
+      "type": "conference",
+      "tags": [
+        "memory",
+        "commemoration",
+        "japan",
+        "korea",
+        "comparative-studies"
+      ],
+      "coauthors": "Hettling, Manfred; Schölz, Tino",
+      "ko": {
+        "title": "Der Mimizuka in Kyoto. Ein Grabmal als zwischenstaatliches Erinnerungsproblem",
+        "event": "DAAD 센터 콘퍼런스 도쿄",
+        "location": "도쿄",
+        "date": "2021.11.6."
+      },
+      "en": {
+        "title": "Der Mimizuka in Kyoto. Ein Grabmal als zwischenstaatliches Erinnerungsproblem",
+        "event": "DAAD Centres Conference Tokyo",
+        "location": "Tokyo",
+        "date": "6 Nov 2021"
+      },
+      "de": {
+        "title": "Der Mimizuka in Kyoto. Ein Grabmal als zwischenstaatliches Erinnerungsproblem",
+        "event": "DAAD-Zentrenkonferenz Tokio",
+        "location": "Tokio",
+        "date": "6. Nov. 2021"
+      }
+    },
+    {
+      "id": "pre-06",
+      "year": "2021",
+      "type": "panel",
+      "invited": true,
+      "tags": [
+        "memory",
+        "commemoration",
+        "korea",
+        "japan"
+      ],
+      "ko": {
+        "title": "유엔묘지 조성 70주년 학술세미나 패널 토론",
+        "event": "유엔묘지 조성 70주년 학술세미나",
+        "location": "부산발전연구원, 부산",
+        "date": "2021.11.5."
+      },
+      "en": {
+        "title": "Panel Discussion (invited), Seminar on the 70th Anniversary of the U.N. Cemetery",
+        "event": "Seminar on the 70th Anniversary of the U.N. Cemetery",
+        "location": "Busan Development Institute, Busan",
+        "date": "5 Nov 2021"
+      },
+      "de": {
+        "title": "Podiumsdiskussion (eingeladen), Seminar zum 70. Jahrestag des UN-Friedhofs",
+        "event": "Seminar zum 70. Jahrestag des UN-Friedhofs",
+        "location": "Busan Development Institute, Busan",
+        "date": "5. Nov. 2021"
+      }
+    },
+    {
+      "id": "pre-07",
+      "year": "2019",
+      "type": "conference",
+      "tags": [
+        "dance",
+        "germany",
+        "history",
+        "weimar",
+        "body-culture"
+      ],
+      "ko": {
+        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
+        "event": "Workshop Jugendbewegungsforschung",
+        "location": "Archiv der deutschen Jugendbewegung, Witzenhausen",
+        "date": "2019.5.10–12."
+      },
+      "en": {
+        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
+        "event": "Workshop Jugendbewegungsforschung",
+        "location": "Archiv der deutschen Jugendbewegung, Witzenhausen",
+        "date": "10–12 May 2019"
+      },
+      "de": {
+        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
+        "event": "Workshop Jugendbewegungsforschung",
+        "location": "Archiv der deutschen Jugendbewegung, Witzenhausen",
+        "date": "10.–12. Mai 2019"
+      }
+    }
+  ],
+  "translations": [
+    {
+      "id": "tra-01",
+      "year": "2027",
+      "status": "forthcoming",
+      "tags": [
+        "memory",
+        "cultural-studies",
+        "comparative-studies"
+      ],
+      "original_author": "Marianne Hirsch",
+      "original_title": "The Generation of Postmemory",
+      "direction": "en→ko",
+      "ko": {
+        "publisher": "현실문화"
+      },
+      "en": {
+        "publisher": "Hyunsilmunhwa"
+      },
+      "de": {
+        "publisher": "Hyunsilmunhwa"
+      }
+    },
+    {
+      "id": "tra-02",
+      "year": "2020",
+      "status": "published",
+      "tags": [
+        "memory",
+        "commemoration",
+        "germany",
+        "history",
+        "comparative-studies"
+      ],
+      "original_author": "Hettling, Manfred",
+      "original_title": "Sinnstiftung und Sinnsuche. Gedenken an Tote politischer Gewalt im 20. Jahrhundert.",
+      "direction": "de→ko",
+      "collection": {
+        "ko": "Manfred Hettling, Alfons Kenkmann 외, 『지구화 시대의 기념문화: 역사적 장소에서 만들어가는 민주·인권의 기억』, 민주화운동기념사업회, 2020.",
+        "en": "Manfred Hettling, Alfons Kenkmann et al., Commemorative Culture in the Era of Globalization, Korea Democracy Foundation, 2020.",
+        "de": "Manfred Hettling, Alfons Kenkmann u.a., Gedenkkultur im Zeitalter der Globalisierung, Korea Democracy Foundation, 2020."
+      },
+      "ko": {
+        "publisher": "민주화운동기념사업회"
+      },
+      "en": {
+        "publisher": "Korea Democracy Foundation"
+      },
+      "de": {
+        "publisher": "Korea Democracy Foundation"
+      }
+    },
+    {
+      "id": "tra-03",
+      "year": "2020",
+      "status": "published",
+      "tags": [
+        "memory",
+        "commemoration",
+        "germany",
+        "history"
+      ],
+      "original_author": "Kenkmann, Alfons",
+      "original_title": "Erinnerungs- und Bildungsarbeit über die nationalsozialistische Herrschaft in Deutschland. Das Beispiel der Polizei.",
+      "direction": "de→ko",
+      "collection": {
+        "ko": "Manfred Hettling, Alfons Kenkmann 외, 『지구화 시대의 기념문화: 역사적 장소에서 만들어가는 민주·인권의 기억』, 민주화운동기념사업회, 2020.",
+        "en": "Manfred Hettling, Alfons Kenkmann et al., Commemorative Culture in the Era of Globalization, Korea Democracy Foundation, 2020.",
+        "de": "Manfred Hettling, Alfons Kenkmann u.a., Gedenkkultur im Zeitalter der Globalisierung, Korea Democracy Foundation, 2020."
+      },
+      "ko": {
+        "publisher": "민주화운동기념사업회"
+      },
+      "en": {
+        "publisher": "Korea Democracy Foundation"
+      },
+      "de": {
+        "publisher": "Korea Democracy Foundation"
+      }
+    }
+  ],
+  "awards": [
+    {
+      "id": "awd-01",
+      "year": "2018",
+      "type": "award",
+      "tags": [
+        "memory",
+        "commemoration",
+        "korea"
+      ],
+      "ko": {
+        "title": "제1회 '임시수도 부산' 연구공모 우수상",
+        "organization": "부산광역시",
+        "detail": "논문: 「유엔기념공원의 중층적 정체성과 발전 방안」"
+      },
+      "en": {
+        "title": "1st Research Competition Award, 'Provisional Capital Busan'",
+        "organization": "Busan Metropolitan Government",
+        "detail": "For \"Multi-layered Identity of the U.N. Memorial Cemetery and suggestions for its improvement\""
+      },
+      "de": {
+        "title": "Auszeichnung im 1. Forschungswettbewerb \"Provisional Capital Busan\"",
+        "organization": "Stadtregierung Busan",
+        "detail": "Für den Beitrag zur vielschichtigen Identität des UN-Friedhofs"
+      }
+    },
+    {
+      "id": "awd-02",
+      "year": "2016",
+      "type": "scholarship",
+      "tags": [
+        "japan"
+      ],
+      "ko": {
+        "title": "JASSO 장학금",
+        "organization": "Japan Student Services Organization (JASSO)",
+        "detail": "도쿄, 일본"
+      },
+      "en": {
+        "title": "JASSO Scholarship",
+        "organization": "Japan Student Services Organization (JASSO)",
+        "detail": "Tokyo, Japan"
+      },
+      "de": {
+        "title": "JASSO-Stipendium",
+        "organization": "Japan Student Services Organization (JASSO)",
+        "detail": "Tokio, Japan"
+      }
+    }
+  ],
+  "languages": [
+    {
+      "language": "한국어 / Korean / Koreanisch",
+      "level_ko": "원어민",
+      "level_en": "Native",
+      "level_de": "Muttersprache",
+      "cert": ""
+    },
+    {
+      "language": "영어 / English / Englisch",
+      "level_ko": "유창 (Fluent)",
+      "level_en": "Fluent",
+      "level_de": "Fließend",
+      "cert": ""
+    },
+    {
+      "language": "독일어 / Deutsch / German",
+      "level_ko": "유창 (Fluent)",
+      "level_en": "Fluent",
+      "level_de": "Fließend",
+      "cert": "C1"
+    },
+    {
+      "language": "일본어 / Japanese / Japanisch",
+      "level_ko": "유창 (Fluent)",
+      "level_en": "Fluent",
+      "level_de": "Fließend",
+      "cert": "JLPT N1"
+    }
+  ],
+  "tags_index": {
+    "518": [
+      "pub-01",
+      "pub-02",
+      "pub-05",
+      "pre-01",
+      "pre-02",
+      "pre-04",
+      "res-01",
+      "res-02"
+    ],
+    "memory": [
+      "pub-02",
+      "pub-03",
+      "pub-05",
+      "pub-07",
+      "pub-09",
+      "pub-11",
+      "pre-01",
+      "pre-02",
+      "pre-03",
+      "pre-04",
+      "pre-05",
+      "pre-06",
+      "tra-01",
+      "tra-02",
+      "tra-03",
+      "awd-01"
+    ],
+    "dance": [
+      "pub-04",
+      "pub-08",
+      "pre-03",
+      "pre-07",
+      "res-04"
+    ],
+    "germany": [
+      "pub-03",
+      "pub-04",
+      "pub-08",
+      "pub-11",
+      "pre-03",
+      "pre-04",
+      "pre-07",
+      "tra-02",
+      "tra-03",
+      "edu-01",
+      "edu-02"
+    ],
+    "korea": [
+      "pub-01",
+      "pub-02",
+      "pub-05",
+      "pub-06",
+      "pub-07",
+      "pre-01",
+      "pre-02",
+      "pre-03",
+      "pre-04",
+      "pre-06",
+      "res-01",
+      "res-02",
+      "res-03",
+      "res-04",
+      "res-05",
+      "res-06",
+      "awd-01",
+      "edu-02",
+      "edu-03",
+      "edu-04"
+    ],
+    "japan": [
+      "pub-07",
+      "pub-09",
+      "pre-01",
+      "pre-02",
+      "pre-05",
+      "pre-06",
+      "res-03",
+      "awd-02",
+      "edu-03"
+    ],
+    "transitional-justice": [
+      "pub-02",
+      "pub-05",
+      "pre-01",
+      "pre-02",
+      "res-02"
+    ],
+    "body-culture": [
+      "pub-04",
+      "pub-06",
+      "pub-08",
+      "pre-07"
+    ],
+    "history": [
+      "pub-04",
+      "pub-08",
+      "pub-11",
+      "tra-02",
+      "tra-03",
+      "edu-01",
+      "edu-02",
+      "edu-03",
+      "edu-04"
+    ],
+    "cultural-studies": [
+      "pub-03",
+      "pub-04",
+      "pub-06",
+      "pub-08",
+      "pub-10",
+      "pre-03",
+      "tra-01",
+      "res-05"
+    ],
+    "weimar": [
+      "pub-04",
+      "pub-08",
+      "pre-07"
+    ],
+    "commemoration": [
+      "pub-07",
+      "pub-09",
+      "pub-11",
+      "pre-04",
+      "pre-05",
+      "pre-06",
+      "tra-02",
+      "tra-03",
+      "awd-01",
+      "edu-02"
+    ],
+    "digital-humanities": [
+      "pub-01"
+    ],
+    "data": [
+      "pub-01",
+      "res-06"
+    ],
+    "performing-arts": [
+      "pub-10",
+      "res-04",
+      "res-06"
+    ],
+    "comparative-studies": [
+      "pub-02",
+      "pub-03",
+      "pub-07",
+      "pub-09",
+      "pub-11",
+      "pre-01",
+      "pre-02",
+      "pre-04",
+      "pre-05",
+      "tra-01",
+      "tra-02",
+      "edu-03"
+    ]
+  }
+}

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sungyoun Chung — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1c1c1c;--ink-mid:#3a3a3a;--ink-light:#6b6b6b;--ink-faint:#999;
+  --accent:#2c5f9e;--accent-bg:#e8f0fb;--success:#2a7a4b;--success-bg:#e6f4ec;
+  --warn:#b07800;--warn-bg:#fdf3dc;--rule:#d8d8d4;--bg:#faf9f6;--paper:#fff;
+  --serif:'EB Garamond','Noto Serif KR',Georgia,serif;
+  --sans:'Noto Sans KR',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+
+/* ── TOP NAV ── */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,.94);backdrop-filter:blur(8px);border-bottom:.5px solid var(--rule);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:48px}
+.nav-tabs{display:flex;gap:0}
+.nav-tab{padding:0 20px;height:48px;display:flex;align-items:center;font-family:var(--sans);font-size:12px;letter-spacing:.06em;color:var(--ink-light);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:all .15s;text-decoration:none}
+.nav-tab:hover{color:var(--ink)}
+.nav-tab.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:500}
+.lang-tabs{display:flex;gap:4px}
+.lang-btn{padding:4px 12px;border-radius:4px;border:.5px solid var(--rule);background:none;font-family:var(--sans);font-size:11px;color:var(--ink-light);cursor:pointer;transition:all .15s}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+.lang-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ── PAGES ── */
+.page{display:none;padding:80px 0 80px}
+.page.active{display:block}
+.inner{max-width:860px;margin:0 auto;padding:0 48px}
+
+/* ── CV PAGE ── */
+.cv-header{padding:48px 0 36px;border-bottom:1.5px solid var(--ink);margin-bottom:40px;animation:fadeUp .5s ease forwards}
+.cv-name{font-size:2.8rem;font-weight:400;letter-spacing:.02em;margin-bottom:6px}
+.cv-title{font-family:var(--sans);font-size:12px;color:var(--ink-light);letter-spacing:.06em;margin-bottom:10px}
+.cv-contact{font-family:var(--sans);font-size:12px;color:var(--ink-mid)}
+.cv-contact a{color:var(--accent);text-decoration:none}
+
+.cv-section{margin-bottom:40px;animation:fadeUp .4s ease forwards;opacity:0}
+.sec-title{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding-bottom:7px;border-bottom:.5px solid var(--rule)}
+.subcat{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid);margin:16px 0 8px;padding-left:10px;border-left:2px solid var(--accent)}
+.entry{display:grid;grid-template-columns:1fr auto;gap:0 20px;margin-bottom:14px;align-items:start}
+.entry-title{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:2px;line-height:1.4}
+.entry-sub{font-family:var(--sans);font-size:11px;color:var(--ink-light);line-height:1.5}
+.entry-date{font-family:var(--sans);font-size:11px;color:var(--ink-faint);white-space:nowrap;padding-top:3px}
+.pub-item{font-size:14px;color:var(--ink-mid);line-height:1.75;margin-bottom:9px;padding-left:14px;position:relative}
+.pub-item::before{content:'';position:absolute;left:0;top:10px;width:4px;height:4px;border-radius:50%;background:var(--rule)}
+.pub-note{font-family:var(--sans);font-size:11px;color:var(--ink-faint);font-style:italic;padding-left:14px;margin-bottom:8px}
+.badge{display:inline-block;font-family:var(--sans);font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle}
+.badge-accepted{background:var(--success-bg);color:var(--success)}
+.badge-review{background:var(--warn-bg);color:var(--warn)}
+.badge-forthcoming{background:var(--accent-bg);color:var(--accent)}
+.interests-list{display:flex;flex-direction:column;gap:6px}
+.interests-list span{font-size:15px;color:var(--ink-mid)}
+.interests-list span::before{content:'— ';color:var(--rule)}
+.lang-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.lang-card{background:var(--paper);border:.5px solid var(--rule);border-radius:4px;padding:10px 14px}
+.lang-card-name{font-family:var(--sans);font-size:12px;font-weight:500;color:var(--ink)}
+.lang-card-level{font-family:var(--sans);font-size:11px;color:var(--ink-light)}
+.lang-card-cert{font-family:var(--sans);font-size:10px;color:var(--accent)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── BUILDER PAGE ── */
+.builder-wrap{display:grid;grid-template-columns:300px 1fr;gap:0;min-height:calc(100vh - 48px);margin-top:48px}
+.builder-sidebar{background:var(--paper);border-right:.5px solid var(--rule);height:calc(100vh - 48px);position:sticky;top:48px;overflow-y:auto;display:flex;flex-direction:column}
+.builder-top{padding:16px;border-bottom:.5px solid var(--rule);position:sticky;top:0;background:var(--paper);z-index:5}
+.builder-top-label{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px}
+.blang-row{display:flex;gap:4px;margin-bottom:10px}
+.blang-btn{flex:1;padding:5px 0;border:.5px solid var(--rule);border-radius:4px;background:none;font-family:var(--sans);font-size:11px;color:var(--ink-light);cursor:pointer;transition:all .15s}
+.blang-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:500}
+.export-row{display:flex;gap:5px}
+.ebtn{flex:1;padding:6px 0;border-radius:4px;border:.5px solid var(--rule);background:none;font-family:var(--sans);font-size:11px;color:var(--ink-mid);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px;transition:all .15s}
+.ebtn:hover{background:var(--bg)}
+.ebtn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.ebtn-primary:hover{background:#245089}
+.ebtn-word{background:#1e5c2a;border-color:#1e5c2a;color:#fff}
+.ebtn-word:hover{background:#164820}
+
+.filter-wrap{padding:12px 16px;border-bottom:.5px solid var(--rule)}
+.filter-label{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:7px}
+.tags-wrap{display:flex;flex-wrap:wrap;gap:4px}
+.tag-pill{padding:2px 8px;border-radius:20px;border:.5px solid var(--rule);background:none;font-family:var(--sans);font-size:10px;color:var(--ink-light);cursor:pointer;transition:all .15s}
+.tag-pill:hover{border-color:var(--accent);color:var(--accent)}
+.tag-pill.active{background:var(--accent-bg);border-color:var(--accent);color:var(--accent);font-weight:500}
+
+.sec-controls{padding:12px 16px;flex:1}
+.sc-block{margin-bottom:14px}
+.sc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.sc-name{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mid)}
+.sc-all{font-family:var(--sans);font-size:10px;color:var(--accent);background:none;border:none;cursor:pointer;padding:0}
+.item-row{display:flex;align-items:flex-start;gap:7px;padding:4px 6px;border-radius:4px;cursor:pointer;transition:background .1s}
+.item-row:hover{background:var(--bg)}
+.item-row input{margin-top:3px;flex-shrink:0;accent-color:var(--accent);cursor:pointer}
+.item-row-text{}
+.item-row-title{font-family:var(--sans);font-size:11px;color:var(--ink-mid);line-height:1.35}
+.item-row-meta{font-family:var(--sans);font-size:10px;color:var(--ink-faint);margin-top:1px}
+.item-row-tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:2px}
+.itag{font-family:var(--sans);font-size:9px;padding:1px 4px;border-radius:3px;background:#eef2f8;color:var(--ink-light)}
+.itag.active{background:var(--accent-bg);color:var(--accent)}
+
+.builder-preview{padding:40px 56px;overflow-y:auto}
+.preview-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.preview-meta-label{font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.preview-count{font-family:var(--sans);font-size:11px;color:var(--ink-light)}
+.cv-out{}
+
+@media print{
+  .topnav,.builder-sidebar,.preview-meta{display:none!important}
+  .builder-wrap{display:block}
+  .builder-preview{padding:0}
+  body{background:#fff}
+  @page{margin:2cm}
+}
+@media(max-width:768px){
+  .topnav{padding:0 20px}
+  .inner{padding:0 20px}
+  .builder-wrap{grid-template-columns:1fr}
+  .builder-sidebar{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ── TOP NAV ── -->
+<nav class="topnav">
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showPage('cv',this)">CV</button>
+    <button class="nav-tab" onclick="showPage('builder',this)">CV Builder</button>
+  </div>
+  <div class="lang-tabs" id="globalLangTabs">
+    <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+    <button class="lang-btn" onclick="setLang('de')">Deutsch</button>
+  </div>
+</nav>
+
+<!-- ══════════════════ CV PAGE ══════════════════ -->
+<div class="page active" id="page-cv">
+  <div class="inner">
+    <div id="cv-content">
+      <div style="text-align:center;padding:80px 0;font-family:var(--sans);color:var(--ink-faint)">데이터 로딩 중...</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ BUILDER PAGE ══════════════════ -->
+<div class="page" id="page-builder">
+  <div class="builder-wrap">
+    <!-- sidebar -->
+    <aside class="builder-sidebar">
+      <div class="builder-top">
+        <div class="builder-top-label">CV Builder</div>
+        <div class="blang-row">
+          <button class="blang-btn active" onclick="setBLang('ko')">한국어</button>
+          <button class="blang-btn" onclick="setBLang('en')">English</button>
+          <button class="blang-btn" onclick="setBLang('de')">Deutsch</button>
+        </div>
+        <div class="export-row">
+          <button class="ebtn" onclick="bSelectAll()">전체선택</button>
+          <button class="ebtn" onclick="bClearAll()">해제</button>
+          <button class="ebtn ebtn-primary" onclick="window.print()">⎙ PDF</button>
+          <button class="ebtn ebtn-word" onclick="exportWord()">W ↓</button>
+        </div>
+      </div>
+      <div class="filter-wrap">
+        <div class="filter-label">태그 필터</div>
+        <div class="tags-wrap" id="tagFilters"></div>
+      </div>
+      <div class="sec-controls" id="secControls"></div>
+    </aside>
+    <!-- preview -->
+    <div class="builder-preview">
+      <div class="preview-meta">
+        <span class="preview-meta-label">미리보기</span>
+        <span class="preview-count" id="bCount"></span>
+      </div>
+      <div class="cv-out" id="builderOut"></div>
+    </div>
+  </div>
+</div>
+
+<!-- docx CDN for Word export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+<script>
+// ══ STATE ══
+let CV = null;
+let lang = 'ko';
+let bLang = 'ko';
+let activeTags = new Set();
+let checked = {};
+
+const ALL_TAGS=['518','memory','dance','germany','korea','japan','transitional-justice','body-culture','history','cultural-studies','weimar','commemoration','digital-humanities','data','performing-arts','comparative-studies'];
+
+const SEC_L={
+  ko:{education:'학력',research:'연구 활동',publications:'출판',presentations:'학술 발표',translations:'번역',awards:'수상 및 지원',languages:'언어 능력'},
+  en:{education:'Education',research:'Research',publications:'Publications',presentations:'Presentations',translations:'Translations',awards:'Awards & Grants',languages:'Language Skills'},
+  de:{education:'Ausbildung',research:'Forschung',publications:'Publikationen',presentations:'Vorträge',translations:'Übersetzungen',awards:'Auszeichnungen & Förderungen',languages:'Sprachkenntnisse'}
+};
+const PUB_T={
+  ko:{journal:'학술지 논문','book-chapter':'단행본 챕터',magazine:'잡지·기고',thesis:'학위논문'},
+  en:{journal:'Journal Articles','book-chapter':'Book Chapter',magazine:'Magazine / Essays',thesis:'Thesis'},
+  de:{journal:'Zeitschriftenartikel','book-chapter':'Buchkapitel',magazine:'Magazin / Essays',thesis:'Abschlussarbeit'}
+};
+const STAT={
+  ko:{accepted:'게재 확정','under-review':'심사중',forthcoming:'출판 예정',published:''},
+  en:{accepted:'Accepted','under-review':'Under review',forthcoming:'Forthcoming',published:''},
+  de:{accepted:'Angenommen','under-review':'Eingereicht',forthcoming:'In Vorbereitung',published:''}
+};
+
+// ══ LOAD ══
+async function loadData(){
+  try{
+    const res=await fetch('./cv_data.json');
+    CV=await res.json();
+    initChecked();
+    renderCVPage();
+    buildTagFilters();
+    buildSecControls();
+    renderBuilder();
+  }catch(e){
+    document.getElementById('cv-content').innerHTML='<p style="color:red;font-family:var(--sans)">cv_data.json 로드 실패. 같은 폴더에 파일이 있는지 확인해주세요.</p>';
+  }
+}
+
+function initChecked(){
+  ['education','research','publications','presentations','translations','awards'].forEach(s=>{
+    (CV[s]||[]).forEach(i=>{checked[i.id]=true});
+  });
+  checked.languages=true;
+}
+
+// ══ PAGE SWITCH ══
+function showPage(id,el){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  // lang tabs: only show on cv page
+  document.getElementById('globalLangTabs').style.display = id==='cv'?'flex':'none';
+}
+
+// ══ LANG ══
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('#globalLangTabs .lang-btn').forEach((b,i)=>b.classList.toggle('active',['ko','en','de'][i]===l));
+  renderCVPage();
+}
+function setBLang(l){
+  bLang=l;
+  document.querySelectorAll('.blang-btn').forEach((b,i)=>b.classList.toggle('active',['ko','en','de'][i]===l));
+  buildSecControls();
+  renderBuilder();
+}
+
+// ══ CV PAGE RENDER ══
+function renderCVPage(){
+  if(!CV)return;
+  const L=lang;
+  const p=CV.personal[L];
+  const STAT_L={ko:{accepted:'게재 확정','under-review':'심사중',forthcoming:'출판 예정'},en:{accepted:'Accepted','under-review':'Under review',forthcoming:'Forthcoming'},de:{accepted:'Angenommen','under-review':'Eingereicht',forthcoming:'In Vorbereitung'}};
+
+  let h=`<div class="cv-header">
+    <div class="cv-name">${p.name}</div>
+    <div class="cv-title">${p.title}</div>
+    <div class="cv-contact"><a href="mailto:${p.email}">${p.email}</a> &nbsp;|&nbsp; ${p.phone}</div>
+  </div>`;
+
+  // interests
+  h+=sec(L==='ko'?'연구 관심사':L==='en'?'Research Interests':'Forschungsinteressen',
+    `<div class="interests-list">${p.interests.map(i=>`<span>${i}</span>`).join('')}</div>`);
+
+  // education
+  const edu=CV.education||[];
+  h+=sec(SEC_L[L].education, edu.map(e=>{
+    const d=e[L]||e.ko;
+    return `<div class="entry"><div>
+      <div class="entry-title">${d.degree}${d.field?' — '+d.field:''}</div>
+      <div class="entry-sub">${d.institution}${d.location?', '+d.location:''}</div>
+      ${d.thesis?`<div class="entry-sub" style="font-style:italic">${L==='de'?'Abschlussarbeit':L==='en'?'Thesis':'석사논문'}: ${d.thesis}</div>`:''}
+    </div><div class="entry-date">${e.period}</div></div>`;
+  }).join(''));
+
+  // research
+  h+=sec(SEC_L[L].research,(CV.research||[]).map(e=>{
+    const d=e[L]||e.ko;
+    return `<div class="entry"><div>
+      <div class="entry-title">${d.title} — <span style="font-weight:400">${d.role}</span></div>
+      <div class="entry-sub">${d.institution}${d.date?', '+d.date:''}</div>
+    </div><div class="entry-date">${e.period}</div></div>`;
+  }).join(''));
+
+  // publications
+  const types=['journal','book-chapter','magazine','thesis'];
+  let pubHtml='';
+  types.forEach(type=>{
+    const g=(CV.publications||[]).filter(p=>p.type===type);
+    if(!g.length)return;
+    pubHtml+=`<div class="subcat">${PUB_T[L][type]}</div>`;
+    g.forEach(p=>{
+      const d=p[L]||p.ko;
+      const sl=p.status&&p.status!=='published'?STAT_L[L][p.status]:'';
+      const bc=p.status==='accepted'?'badge-accepted':p.status==='under-review'?'badge-review':p.status==='forthcoming'?'badge-forthcoming':'';
+      const badge=sl?`<span class="badge ${bc}">${sl}</span>`:'';
+      const doi=p.doi?` DOI: <a href="${p.doi}" style="color:var(--accent);font-size:12px">${p.doi}</a>`:'';
+      pubHtml+=`<div class="pub-item">${d.authors}. (${p.year}). ${d.title}. <em>${d.journal}</em>${d.volume?' '+d.volume:''}.${doi}${badge}</div>`;
+    });
+  });
+  h+=sec(SEC_L[L].publications,pubHtml);
+
+  // presentations
+  let preHtml=(CV.presentations||[]).map(e=>{
+    const d=e[L]||e.ko;
+    const conf=e.confirmed?` <span style="font-size:11px;color:var(--success)">(${L==='ko'?'일정 확정':L==='en'?'confirmed':'bestätigt'})</span>`:'';
+    const co=e.coauthors?`<div class="entry-sub">${L==='de'?'mit':'with'} ${e.coauthors}</div>`:'';
+    return `<div class="pub-item">${d.title}. <em>${d.event}</em>${d.location?', '+d.location:''}${d.date?', '+d.date:''}.${conf}${co}</div>`;
+  }).join('');
+  h+=sec(SEC_L[L].presentations,preHtml);
+
+  // translations
+  let traHtml='';let lastCol=null;
+  (CV.translations||[]).forEach(e=>{
+    const d=e[L]||e.ko;
+    const dir=e.direction==='en→ko'?(L==='ko'?'영어→한국어':L==='en'?'English → Korean':'Englisch → Koreanisch'):(L==='ko'?'독일어→한국어':L==='en'?'German → Korean':'Deutsch → Koreanisch');
+    const sl=e.status!=='published'?STAT_L[L][e.status]:'';
+    const badge=sl?`<span class="badge badge-forthcoming">${sl}</span>`:'';
+    traHtml+=`<div class="pub-item">${e.original_author}, <em>${e.original_title}</em> (${dir}), ${d.publisher}, ${e.year}.${badge}</div>`;
+    if(e.collection){const col=e.collection[L]||e.collection.ko;if(col!==lastCol){traHtml+=`<div class="pub-note">${L==='ko'?'수록':L==='en'?'In':'In'}: ${col}</div>`;lastCol=col;}}
+  });
+  h+=sec(SEC_L[L].translations,traHtml);
+
+  // awards
+  h+=sec(SEC_L[L].awards,(CV.awards||[]).map(e=>{
+    const d=e[L]||e.ko;
+    return `<div class="entry"><div>
+      <div class="entry-title">${d.title}</div>
+      <div class="entry-sub">${d.organization}${d.detail?' | '+d.detail:''}</div>
+    </div><div class="entry-date">${e.year}</div></div>`;
+  }).join(''));
+
+  // languages
+  const langCards=(CV.languages||[]).map(l=>{
+    const nm=l.language.split(' / ')[L==='ko'?0:L==='en'?1:2]||l.language.split(' / ')[0];
+    const lv=l['level_'+L]||l.level_ko;
+    return `<div class="lang-card"><div class="lang-card-name">${nm}</div><div class="lang-card-level">${lv}</div>${l.cert?`<div class="lang-card-cert">${l.cert}</div>`:''}</div>`;
+  }).join('');
+  h+=sec(SEC_L[L].languages,`<div class="lang-grid">${langCards}</div>`);
+
+  document.getElementById('cv-content').innerHTML=h;
+  // stagger animations
+  document.querySelectorAll('#cv-content .cv-section').forEach((el,i)=>{
+    el.style.animationDelay=(i*0.06)+'s';
+  });
+}
+
+function sec(title,content){
+  return `<div class="cv-section"><div class="sec-title">${title}</div>${content}</div>`;
+}
+
+// ══ BUILDER TAG FILTERS ══
+function buildTagFilters(){
+  document.getElementById('tagFilters').innerHTML=ALL_TAGS.map(t=>
+    `<button class="tag-pill" data-tag="${t}" onclick="toggleTag('${t}')">${t}</button>`
+  ).join('');
+}
+function toggleTag(tag){
+  if(activeTags.has(tag)){activeTags.delete(tag);}
+  else{activeTags.add(tag);(CV.tags_index[tag]||[]).forEach(id=>checked[id]=true);}
+  document.querySelectorAll('.tag-pill').forEach(b=>b.classList.toggle('active',activeTags.has(b.dataset.tag)));
+  buildSecControls();renderBuilder();
+}
+
+// ══ BUILDER SECTION CONTROLS ══
+function buildSecControls(){
+  const L=bLang;
+  const secs=['education','research','publications','presentations','translations','awards','languages'];
+  let h='';
+  secs.forEach(sec=>{
+    const label=SEC_L[L][sec];
+    if(sec==='languages'){
+      h+=`<div class="sc-block"><div class="sc-head"><span class="sc-name">${label}</span></div>
+        <label class="item-row"><input type="checkbox" ${checked.languages?'checked':''} onchange="checked.languages=this.checked;renderBuilder()">
+        <div class="item-row-text"><div class="item-row-title">${L==='ko'?'언어 능력 전체':L==='en'?'All language skills':'Alle Sprachkenntnisse'}</div></div></label></div>`;
+      return;
+    }
+    const items=CV[sec]||[];
+    const vis=activeTags.size>0?items.filter(i=>i.tags&&i.tags.some(t=>activeTags.has(t))):items;
+    if(!vis.length)return;
+    h+=`<div class="sc-block"><div class="sc-head"><span class="sc-name">${label}</span>
+      <button class="sc-all" onclick="toggleSec('${sec}',true)">전체</button></div>`;
+    vis.forEach(item=>{
+      const d=item[L]||item.ko||{};
+      const title=d.title||d.degree||item.original_title||'';
+      const meta=item.year||item.period||'';
+      const sl=item.status&&item.status!=='published'?STAT[L][item.status]:'';
+      const bc=item.status==='accepted'?'badge-accepted':item.status==='under-review'?'badge-review':item.status==='forthcoming'?'badge-forthcoming':'';
+      const badge=sl?`<span class="badge ${bc}" style="font-size:8px">${sl}</span>`:'';
+      const tags=(item.tags||[]).map(t=>`<span class="itag ${activeTags.has(t)?'active':''}">${t}</span>`).join('');
+      h+=`<label class="item-row"><input type="checkbox" ${checked[item.id]?'checked':''} onchange="checked['${item.id}']=this.checked;renderBuilder()">
+        <div class="item-row-text">
+          <div class="item-row-title">${title}${badge}</div>
+          <div class="item-row-meta">${meta}</div>
+          ${tags?`<div class="item-row-tags">${tags}</div>`:''}
+        </div></label>`;
+    });
+    h+=`</div>`;
+  });
+  document.getElementById('secControls').innerHTML=h;
+}
+
+function toggleSec(sec,val){
+  if(sec==='languages'){checked.languages=val;}
+  else(CV[sec]||[]).forEach(i=>checked[i.id]=val);
+  buildSecControls();renderBuilder();
+}
+function bSelectAll(){Object.keys(checked).forEach(k=>checked[k]=true);buildSecControls();renderBuilder();}
+function bClearAll(){Object.keys(checked).forEach(k=>checked[k]=false);buildSecControls();renderBuilder();}
+
+// ══ BUILDER PREVIEW RENDER ══
+function renderBuilder(){
+  if(!CV)return;
+  const L=bLang;
+  const p=CV.personal[L];
+  let h='',total=0;
+
+  h+=`<div style="border-bottom:1.5px solid var(--ink);padding-bottom:24px;margin-bottom:8px">
+    <div style="font-family:var(--serif);font-size:2.2rem;font-weight:400;letter-spacing:.02em;margin-bottom:5px">${p.name}</div>
+    <div style="font-family:var(--sans);font-size:11px;color:var(--ink-light);margin-bottom:5px">${p.title}</div>
+    <div style="font-family:var(--sans);font-size:11px;color:var(--ink-mid)">${p.email} | ${p.phone}</div>
+  </div>`;
+
+  const eduItems=(CV.education||[]).filter(e=>checked[e.id]);
+  if(eduItems.length){h+=bSec(SEC_L[L].education,eduItems.map(e=>{
+    const d=e[L]||e.ko;
+    return `<div class="entry"><div>
+      <div class="entry-title">${d.degree}${d.field?' — '+d.field:''}</div>
+      <div class="entry-sub">${d.institution}${d.location?', '+d.location:''}</div>
+      ${d.thesis?`<div class="entry-sub" style="font-style:italic">${L==='de'?'Abschlussarbeit':L==='en'?'Thesis':'석사논문'}: ${d.thesis}</div>`:''}
+    </div><div class="entry-date">${e.period}</div></div>`;
+  }).join(''));total+=eduItems.length;}
+
+  const resItems=(CV.research||[]).filter(e=>checked[e.id]);
+  if(resItems.length){h+=bSec(SEC_L[L].research,resItems.map(e=>{
+    const d=e[L]||e.ko;
+    return `<div class="entry"><div>
+      <div class="entry-title">${d.title} — <span style="font-weight:400">${d.role}</span></div>
+      <div class="entry-sub">${d.institution}${d.date?', '+d.date:''}</div>
+    </div><div class="entry-date">${e.period}</div></div>`;
+  }).join(''));total+=resItems.length;}
+
+  const pubItems=(CV.publications||[]).filter(e=>checked[e.id]);
+  if(pubItems.length){
+    let ph='';
+    ['journal','book-chapter','magazine','thesis'].forEach(type=>{
+      const g=pubItems.filter(p=>p.type===type);
+      if(!g.length)return;
+      ph+=`<div class="subcat">${PUB_T[L][type]}</div>`;
+      g.forEach(p=>{
+        const d=p[L]||p.ko;
+        const sl=p.status&&p.status!=='published'?STAT[L][p.status]:'';
+        const bc=p.status==='accepted'?'badge-accepted':p.status==='under-review'?'badge-review':p.status==='forthcoming'?'badge-forthcoming':'';
+        const badge=sl?`<span class="badge ${bc}">${sl}</span>`:'';
+        const doi=p.doi?` DOI: <a href="${p.doi}" style="color:var(--accent);font-size:12px">${p.doi}</a>`:'';
+        ph+=`<div class="pub-item">${d.authors}. (${p.year}). ${d.title}. <em>${d.journal}</em>${d.volume?' '+d.volume:''}.${doi}${badge}</div>`;
+      });
+    });
+    h+=bSec(SEC_L[L].publications,ph);total+=pubItems.length;
+  }
+
+  const preItems=(CV.presentations||[]).filter(e=>checked[e.id]);
+  if(preItems.length){h+=bSec(SEC_L[L].presentations,preItems.map(e=>{
+    const d=e[L]||e.ko;
+    const conf=e.confirmed?` <span style="font-size:11px;color:var(--success)">(${L==='ko'?'일정 확정':L==='en'?'confirmed':'bestätigt'})</span>`:'';
+    const co=e.coauthors?`<br><span style="font-family:var(--sans);font-size:11px;color:var(--ink-light)">${L==='de'?'mit':'with'} ${e.coauthors}</span>`:'';
+    return `<div class="pub-item">${d.title}. <em>${d.event}</em>${d.location?', '+d.location:''}${d.date?', '+d.date:''}.${conf}${co}</div>`;
+  }).join(''));total+=preItems.length;}
+
+  const traItems=(CV.translations||[]).filter(e=>checked[e.id]);
+  if(traItems.length){
+    let th='';let lastCol=null;
+    traItems.forEach(e=>{
+      const d=e[L]||e.ko;
+      const dir=e.direction==='en→ko'?(L==='ko'?'영어→한국어':L==='en'?'English → Korean':'Englisch → Koreanisch'):(L==='ko'?'독일어→한국어':L==='en'?'German → Korean':'Deutsch → Koreanisch');
+      const sl=e.status!=='published'?STAT[L][e.status]:'';
+      const badge=sl?`<span class="badge badge-forthcoming">${sl}</span>`:'';
+      th+=`<div class="pub-item">${e.original_author}, <em>${e.original_title}</em> (${dir}), ${d.publisher}, ${e.year}.${badge}</div>`;
+      if(e.collection){const col=e.collection[L]||e.collection.ko;if(col!==lastCol){th+=`<div class="pub-note">${L==='ko'?'수록':L==='en'?'In':'In'}: ${col}</div>`;lastCol=col;}}
+    });
+    h+=bSec(SEC_L[L].translations,th);total+=traItems.length;
+  }
+
+  const awdItems=(CV.awards||[]).filter(e=>checked[e.id]);
+  if(awdItems.length){h+=bSec(SEC_L[L].awards,awdItems.map(e=>{
+    const d=e[L]||e.ko;
+    return `<div class="entry"><div>
+      <div class="entry-title">${d.title}</div>
+      <div class="entry-sub">${d.organization}${d.detail?' | '+d.detail:''}</div>
+    </div><div class="entry-date">${e.year}</div></div>`;
+  }).join(''));total+=awdItems.length;}
+
+  if(checked.languages){
+    const cards=(CV.languages||[]).map(l=>{
+      const nm=l.language.split(' / ')[L==='ko'?0:L==='en'?1:2]||l.language.split(' / ')[0];
+      const lv=l['level_'+L]||l.level_ko;
+      return `<div class="lang-card"><div class="lang-card-name">${nm}</div><div class="lang-card-level">${lv}</div>${l.cert?`<div class="lang-card-cert">${l.cert}</div>`:''}</div>`;
+    }).join('');
+    h+=bSec(SEC_L[L].languages,`<div class="lang-grid">${cards}</div>`);
+    total++;
+  }
+
+  if(!h.includes('entry')&&!h.includes('pub-item')){
+    h+='<div style="text-align:center;padding:40px;font-family:var(--sans);color:var(--ink-faint)">항목을 선택하면 미리보기가 표시됩니다.</div>';
+  }
+
+  document.getElementById('builderOut').innerHTML=h;
+  document.getElementById('bCount').textContent=`${total}개 항목`;
+}
+
+function bSec(title,content){
+  return `<div style="margin-bottom:32px"><div class="sec-title">${title}</div>${content}</div>`;
+}
+
+// ══ WORD EXPORT ══
+async function exportWord(){
+  if(!CV){alert('데이터 로딩 중입니다.');return;}
+  const L=bLang;
+  const p=CV.personal[L];
+
+  // Build plain text content for Word
+  let lines=[];
+  lines.push(p.name);
+  lines.push(p.title);
+  lines.push(`${p.email}  |  ${p.phone}`);
+  lines.push('');
+
+  // Research interests
+  lines.push('━━ '+(L==='ko'?'연구 관심사':L==='en'?'RESEARCH INTERESTS':'FORSCHUNGSINTERESSEN')+' ━━');
+  p.interests.forEach(i=>lines.push('— '+i));
+  lines.push('');
+
+  const add=(secKey,items,fmt)=>{
+    if(!items.length)return;
+    lines.push('━━ '+SEC_L[L][secKey].toUpperCase()+' ━━');
+    items.forEach(item=>fmt(item));
+    lines.push('');
+  };
+
+  add('education',(CV.education||[]).filter(e=>checked[e.id]),e=>{
+    const d=e[L]||e.ko;
+    lines.push(`${d.degree}${d.field?' — '+d.field:''}  (${e.period})`);
+    lines.push(`  ${d.institution}${d.location?', '+d.location:''}`);
+    if(d.thesis)lines.push(`  ${L==='de'?'Abschlussarbeit':L==='en'?'Thesis':'석사논문'}: ${d.thesis}`);
+  });
+
+  add('research',(CV.research||[]).filter(e=>checked[e.id]),e=>{
+    const d=e[L]||e.ko;
+    lines.push(`${d.title} — ${d.role}  (${e.period})`);
+    lines.push(`  ${d.institution}${d.date?', '+d.date:''}`);
+  });
+
+  const pubItems=(CV.publications||[]).filter(e=>checked[e.id]);
+  if(pubItems.length){
+    lines.push('━━ '+SEC_L[L]['publications'].toUpperCase()+' ━━');
+    ['journal','book-chapter','magazine','thesis'].forEach(type=>{
+      const g=pubItems.filter(p=>p.type===type);
+      if(!g.length)return;
+      lines.push('['+PUB_T[L][type]+']');
+      g.forEach(p=>{
+        const d=p[L]||p.ko;
+        const sl=p.status&&p.status!=='published'?` [${STAT[L][p.status]}]`:'';
+        const doi=p.doi?`  DOI: ${p.doi}`:'';
+        lines.push(`${d.authors}. (${p.year}). ${d.title}. ${d.journal}${d.volume?' '+d.volume:''}.${doi}${sl}`);
+      });
+    });
+    lines.push('');
+  }
+
+  add('presentations',(CV.presentations||[]).filter(e=>checked[e.id]),e=>{
+    const d=e[L]||e.ko;
+    const conf=e.confirmed?` (${L==='ko'?'일정 확정':L==='en'?'confirmed':'bestätigt'})`:'';
+    lines.push(`${d.title}. ${d.event}${d.location?', '+d.location:''}${d.date?', '+d.date:''}.${conf}`);
+    if(e.coauthors)lines.push(`  ${L==='de'?'mit':'with'} ${e.coauthors}`);
+  });
+
+  const traItems=(CV.translations||[]).filter(e=>checked[e.id]);
+  if(traItems.length){
+    lines.push('━━ '+SEC_L[L]['translations'].toUpperCase()+' ━━');
+    let lastCol=null;
+    traItems.forEach(e=>{
+      const d=e[L]||e.ko;
+      const dir=e.direction==='en→ko'?(L==='ko'?'영어→한국어':L==='en'?'English → Korean':'Englisch → Koreanisch'):(L==='ko'?'독일어→한국어':L==='en'?'German → Korean':'Deutsch → Koreanisch');
+      const sl=e.status!=='published'?` [${STAT[L][e.status]}]`:'';
+      lines.push(`${e.original_author}, ${e.original_title} (${dir}), ${d.publisher}, ${e.year}.${sl}`);
+      if(e.collection){const col=e.collection[L]||e.collection.ko;if(col!==lastCol){lines.push(`  ${L==='ko'?'수록':L==='en'?'In':'In'}: ${col}`);lastCol=col;}}
+    });
+    lines.push('');
+  }
+
+  add('awards',(CV.awards||[]).filter(e=>checked[e.id]),e=>{
+    const d=e[L]||e.ko;
+    lines.push(`${d.title}  (${e.year})`);
+    lines.push(`  ${d.organization}${d.detail?' | '+d.detail:''}`);
+  });
+
+  if(checked.languages){
+    lines.push('━━ '+SEC_L[L]['languages'].toUpperCase()+' ━━');
+    CV.languages.forEach(l=>{
+      const nm=l.language.split(' / ')[L==='ko'?0:L==='en'?1:2]||l.language.split(' / ')[0];
+      const lv=l['level_'+L]||l.level_ko;
+      lines.push(`${nm} — ${lv}${l.cert?' ('+l.cert+')':''}`);
+    });
+    lines.push('');
+  }
+
+  // Create plain text blob as .txt (cross-browser compatible without CDN docx)
+  // Try docx-js via CDN; fallback to txt
+  try{
+    await exportDocx(lines,p.name,L);
+  }catch(err){
+    console.warn('docx export failed, falling back to txt',err);
+    const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});
+    saveAs(blob,`CV_${p.name}_${L}.txt`);
+    alert('.docx 생성에 실패하여 .txt 파일로 저장했습니다. 텍스트 파일을 Word에서 열어 사용하세요.');
+  }
+}
+
+async function exportDocx(lines, name, L){
+  // Load docx from CDN
+  const script=document.createElement('script');
+  script.src='https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.umd.min.js';
+  await new Promise((res,rej)=>{script.onload=res;script.onerror=rej;document.head.appendChild(script);});
+
+  const {Document,Packer,Paragraph,TextRun,AlignmentType,BorderStyle}=window.docx;
+  const p=CV.personal[L];
+  const children=[];
+
+  const mkP=(text,opts={})=>new Paragraph({
+    spacing:{before:opts.before||0,after:opts.after||60},
+    children:[new TextRun({text,bold:opts.bold||false,size:opts.size||20,color:opts.color||'1c1c1c',font:'맑은 고딕',italics:opts.italic||false})]
+  });
+  const rule=()=>new Paragraph({
+    spacing:{before:160,after:80},
+    border:{bottom:{style:BorderStyle.SINGLE,size:6,color:'2C5F9E',space:1}},
+    children:[]
+  });
+  const secHead=(txt)=>[
+    rule(),
+    new Paragraph({spacing:{before:0,after:60},children:[new TextRun({text:txt,bold:true,size:26,color:'2C5F9E',font:'맑은 고딕'})]})
+  ];
+
+  // Header
+  children.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:0,after:80},children:[new TextRun({text:p.name,bold:true,size:52,font:'맑은 고딕',color:'1A1A1A'})]}));
+  children.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:0,after:60},children:[new TextRun({text:p.title,size:20,font:'맑은 고딕',color:'555555'})]}));
+  children.push(new Paragraph({alignment:AlignmentType.CENTER,spacing:{before:0,after:200},children:[new TextRun({text:`${p.email}  |  ${p.phone}`,size:18,font:'맑은 고딕',color:'666666'})]}));
+
+  // Process lines into paragraphs
+  lines.slice(3).forEach(line=>{
+    if(!line){children.push(new Paragraph({spacing:{before:0,after:0},children:[new TextRun({text:'',size:20})]}));return;}
+    if(line.startsWith('━━')){
+      const txt=line.replace(/━━\s*/g,'').trim();
+      secHead(txt).forEach(p=>children.push(p));
+      return;
+    }
+    if(line.startsWith('[')){
+      children.push(new Paragraph({spacing:{before:100,after:20},children:[new TextRun({text:line.replace(/[\[\]]/g,''),bold:true,size:19,color:'2C5F9E',font:'맑은 고딕'})]}));
+      return;
+    }
+    const indent=line.startsWith('  ');
+    children.push(new Paragraph({
+      spacing:{before:indent?0:60,after:20},
+      indent:indent?{left:360}:{},
+      children:[new TextRun({text:line.trim(),size:indent?18:20,font:'맑은 고딕',color:indent?'555555':'1c1c1c'})]
+    }));
+  });
+
+  const doc=new Document({
+    sections:[{
+      properties:{page:{size:{width:11906,height:16838},margin:{top:1134,right:1134,bottom:1134,left:1134}}},
+      children
+    }]
+  });
+
+  const buf=await Packer.toBlob(doc);
+  saveAs(buf,`CV_${name.replace(/ /g,'_')}_${L}.docx`);
+}
+
+loadData();
+</script>
+</body>
+</html>
