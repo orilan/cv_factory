@@ -474,36 +474,6 @@
       }
     },
     {
-      "id": "pub-06",
-      "type": "journal",
-      "year": "2021",
-      "status": "published",
-      "tags": [
-        "body-culture",
-        "cultural-studies",
-        "performing-arts",
-        "korea"
-      ],
-      "ko": {
-        "authors": "정성윤",
-        "title": "신체와 수행성을 통해 읽는 문화",
-        "journal": "오늘의 문예비평",
-        "volume": "Nr.123"
-      },
-      "en": {
-        "authors": "Chung, Sungyoun",
-        "title": "Cultural Phenomena through Body Culture and Performativity",
-        "journal": "Literary Criticism Today",
-        "volume": "No.123"
-      },
-      "de": {
-        "authors": "Chung, Sungyoun",
-        "title": "Kulturelle Phänomene durch Körperkultur und Performativität",
-        "journal": "Literary Criticism Today",
-        "volume": "Nr.123"
-      }
-    },
-    {
       "id": "pub-07",
       "type": "journal",
       "year": "2019",
@@ -1082,7 +1052,6 @@
       "pub-01",
       "pub-02",
       "pub-05",
-      "pub-06",
       "pub-07",
       "pre-01",
       "pre-02",
@@ -1120,7 +1089,6 @@
     ],
     "body-culture": [
       "pub-04",
-      "pub-06",
       "pub-08",
       "pre-07"
     ],
@@ -1138,7 +1106,6 @@
     "cultural-studies": [
       "pub-03",
       "pub-04",
-      "pub-06",
       "pub-08",
       "pub-10",
       "pre-03",
@@ -1174,6 +1141,7 @@
       "res-04",
       "res-06"
     ],
+
     "comparative-studies": [
       "pub-02",
       "pub-03",
