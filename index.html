@@ -217,7 +217,7 @@ const STAT={
 // ══ LOAD ══
 async function loadData(){
   try{
-    const res=await fetch('./cv_data.json');
+    const res=await fetch('./cv_data.json?v='+Date.now());
     CV=await res.json();
     initChecked();
     renderCVPage();
