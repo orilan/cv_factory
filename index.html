@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정성윤 — Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1c1c;
+    --ink-mid: #3a3a3a;
+    --ink-light: #6b6b6b;
+    --ink-faint: #999;
+    --accent: #2c5f9e;
+    --accent-light: #e8f0fb;
+    --rule: #d0d0cc;
+    --bg: #faf9f6;
+    --paper: #ffffff;
+    --serif: 'EB Garamond', 'Noto Serif KR', Georgia, serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── LANG SWITCHER ── */
+  .lang-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,249,246,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 0.5px solid var(--rule);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 48px;
+  }
+  .lang-btn {
+    background: none;
+    border: 0.5px solid var(--rule);
+    border-radius: 3px;
+    padding: 3px 12px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--ink-light);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .lang-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* ── LAYOUT ── */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 80px 48px 80px;
+  }
+
+  /* ── HEADER ── */
+  .cv-header {
+    padding: 56px 0 40px;
+    border-bottom: 1.5px solid var(--ink);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+  }
+  .cv-name {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .cv-name-sub {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--ink-light);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .cv-contact {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+  }
+  .cv-contact a { color: var(--accent); text-decoration: none; }
+  .cv-contact a:hover { text-decoration: underline; }
+
+  /* ── SECTIONS ── */
+  .cv-section {
+    margin-bottom: 44px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+  }
+  .cv-section:nth-child(2)  { animation-delay: 0.05s; }
+  .cv-section:nth-child(3)  { animation-delay: 0.10s; }
+  .cv-section:nth-child(4)  { animation-delay: 0.15s; }
+  .cv-section:nth-child(5)  { animation-delay: 0.20s; }
+  .cv-section:nth-child(6)  { animation-delay: 0.25s; }
+  .cv-section:nth-child(7)  { animation-delay: 0.30s; }
+  .cv-section:nth-child(8)  { animation-delay: 0.35s; }
+  .cv-section:nth-child(9)  { animation-delay: 0.40s; }
+  .cv-section:nth-child(10) { animation-delay: 0.45s; }
+
+  .section-title {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 0.5px solid var(--rule);
+  }
+
+  /* ── ENTRIES ── */
+  .entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0 24px;
+    margin-bottom: 18px;
+    align-items: start;
+  }
+  .entry-left {}
+  .entry-title {
+    font-family: var(--serif);
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .entry-sub {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+  .entry-date {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    padding-top: 3px;
+  }
+
+  /* ── PUBLICATIONS ── */
+  .pub-subcat {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    margin: 20px 0 10px;
+    padding-left: 12px;
+    border-left: 2px solid var(--accent);
+  }
+  .pub-subcat:first-child { margin-top: 0; }
+
+  .pub-item {
+    font-family: var(--serif);
+    font-size: 0.90rem;
+    color: var(--ink-mid);
+    line-height: 1.75;
+    margin-bottom: 10px;
+    padding-left: 16px;
+    position: relative;
+  }
+  .pub-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 11px;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--rule);
+  }
+  .pub-status {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    color: var(--accent);
+    border: 0.5px solid var(--accent);
+    border-radius: 2px;
+    padding: 1px 6px;
+    margin-left: 6px;
+    vertical-align: middle;
+    letter-spacing: 0.04em;
+  }
+  .pub-status.review { color: #b07800; border-color: #b07800; }
+  .pub-note {
+    font-family: var(--sans);
+    font-size: 0.76rem;
+    color: var(--ink-faint);
+    font-style: italic;
+    margin-top: 4px;
+    padding-left: 16px;
+  }
+
+  /* ── INTERESTS LIST ── */
+  .interests {
+    font-family: var(--serif);
+    font-size: 0.92rem;
+    color: var(--ink-mid);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .interests span::before { content: '—  '; color: var(--rule); }
+
+  /* ── LANGUAGES ── */
+  .lang-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .lang-item {
+    background: var(--paper);
+    border: 0.5px solid var(--rule);
+    border-radius: 4px;
+    padding: 10px 14px;
+  }
+  .lang-name {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .lang-level {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--ink-light);
+  }
+  .lang-cert {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    color: var(--accent);
+    margin-top: 2px;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── LANG VISIBILITY ── */
+  [data-lang] { display: none; }
+  body.lang-ko [data-lang="ko"] { display: block; }
+  body.lang-en [data-lang="en"] { display: block; }
+  body.lang-de [data-lang="de"] { display: block; }
+  body.lang-ko .name-ko,
+  body.lang-en .name-en,
+  body.lang-de .name-de { display: block; }
+  .name-ko, .name-en, .name-de { display: none; }
+
+  /* inline lang spans */
+  body.lang-ko .t-ko { display: inline; }
+  body.lang-en .t-en { display: inline; }
+  body.lang-de .t-de { display: inline; }
+  .t-ko, .t-en, .t-de { display: none; }
+
+  @media (max-width: 640px) {
+    .page { padding: 70px 24px 60px; }
+    .cv-name { font-size: 2rem; }
+    .lang-bar { padding: 10px 24px; }
+    .entry { grid-template-columns: 1fr; }
+    .entry-date { margin-top: 2px; }
+  }
+
+  @media print {
+    .lang-bar { display: none; }
+    .page { padding: 0; }
+    .cv-section, .cv-header { opacity: 1; animation: none; }
+    body { font-size: 13px; }
+  }
+</style>
+</head>
+<body class="lang-ko">
+
+<!-- ── LANG SWITCHER ── -->
+<nav class="lang-bar" aria-label="언어 선택">
+  <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
+  <button class="lang-btn" onclick="setLang('en')">English</button>
+  <button class="lang-btn" onclick="setLang('de')">Deutsch</button>
+</nav>
+
+<main class="page">
+
+  <!-- ── HEADER ── -->
+  <header class="cv-header">
+    <div class="cv-name">
+      <span class="name-ko">정성윤</span>
+      <span class="name-en">Sungyoun Chung</span>
+      <span class="name-de">Sungyoun Chung</span>
+    </div>
+    <div class="cv-name-sub">
+      <span class="t-ko">전임연구원, 전남대학교 5·18연구소 &nbsp;|&nbsp; 박사수료, Martin-Luther-Universität Halle-Wittenberg</span>
+      <span class="t-en">Research Fellow, May 18 Institute, Chonnam National University &nbsp;|&nbsp; Ph.D. Candidate, Martin-Luther-Universität Halle-Wittenberg</span>
+      <span class="t-de">Wissenschaftliche Mitarbeiterin, Mai-18-Institut, Chonnam National University &nbsp;|&nbsp; Doktorandin, Martin-Luther-Universität Halle-Wittenberg</span>
+    </div>
+    <div class="cv-contact">
+      <span><a href="mailto:sungyounchung@gmail.com">sungyounchung@gmail.com</a></span>
+      <span>+82 10 9517 1782</span>
+    </div>
+  </header>
+
+  <!-- ── 연구 관심사 ── -->
+  <section class="cv-section">
+    <div class="section-title">
+      <span class="t-ko">연구 관심사</span>
+      <span class="t-en">Research Interests</span>
+      <span class="t-de">Forschungsinteressen</span>
+    </div>
+    <div class="interests">
+      <span>
+        <span class="t-ko">기억, 기념 공간, 국가폭력과 역사화</span>
+        <span class="t-en">Memory, memorial sites, state violence and historicization</span>
+        <span class="t-de">Erinnerung, Gedenkstätten, Staatsgewalt und Historisierung</span>
+      </span>
+      <span>
+        <span class="t-ko">정치 프로그램과 사적 자율성 간의 긴장</span>
+        <span class="t-en">Tension between political program and private autonomy</span>
+        <span class="t-de">Spannungsverhältnis zwischen politischem Programm und privater Autonomie</span>
+      </span>
+      <span>
+        <span class="t-ko">비언어적 재현·신체문화·무용·퍼포먼스</span>
+        <span class="t-en">Nonverbal representation, body culture, dance, and performance</span>
+        <span class="t-de">Nonverbale Repräsentation, Körperkultur, Tanz und Performance</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- ── 학력 ── -->
+  <section class="cv-section">
+    <div class="section-title">
+      <span class="t-ko">학력</span><span class="t-en">Education</span><span class="t-de">Ausbildung</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">
+          <span class="t-ko">박사 (수료, 2026 졸업 예정) — 역사학</span>
+          <span class="t-en">Ph.D. Candidate (expected 2026) — History</span>
+          <span class="t-de">Doktorat (Abschluss voraussichtlich 2026) — Geschichte</span>
+        </div>
+        <div class="entry-sub">Martin-Luther-Universität Halle-Wittenberg,
+          <span class="t-ko">할레, 독일</span><span class="t-en">Halle, Germany</span><span class="t-de">Halle, Deutschland</span>
+        </div>
+      </div>
+      <div class="entry-date">2018–<span class="t-ko">현재</span><span class="t-en">present</span><span class="t-de">heute</span></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">
+          <span class="t-ko">문학석사 — 사학</span>
+          <span class="t-en">M.A. — History</span>
+          <span class="t-de">M.A. — Geschichte</span>
+        </div>
+        <div class="entry-sub">
+          <span class="t-ko">고려대학교, 서울, 한국</span>
+          <span class="t-en">Korea University, Seoul, South Korea</span>
+          <span class="t-de">Korea University, Seoul, Südkorea</span>
+        </div>
+        <div class="entry-sub" style="margin-top:3px; font-style:italic;">
+          <span class="t-ko">석사논문: 독일 국립 추도시설 노이에 바헤의 보편성과 특수성</span>
+          <span class="t-en">Thesis: Universality and Specificity of Germany's National Memorial Space, Neue Wache</span>
+          <span class="t-de">Abschlussarbeit: Universalität und Spezifikum der nationalen Gedenkstätte Deutschlands, Neue Wache</span>
+        </div>
+      </div>
+      <div class="entry-date">2017</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">Joint Master Course — TEACH International Master Program</div>
+        <div class="entry-sub">
+          <span class="t-ko">고려대학교 · 쓰쿠바대학교 · 본대학교 (서울·쓰쿠바·본)</span>
+          <span class="t-en">Korea University · University of Tsukuba · Universität Bonn (Seoul · Tsukuba · Bonn)</span>
+          <span class="t-de">Korea University · Universität Tsukuba · Universität Bonn (Seoul · Tsukuba · Bonn)</span>
+        </div>
+      </div>
+      <div class="entry-date">2015–2016</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">
+          <span class="t-ko">문학사 — 사학·정치외교학</span>
+          <span class="t-en">B.A. — History and Political Science</span>
+          <span class="t-de">B.A. — Geschichte und Politikwissenschaft</span>
+        </div>
+        <div class="entry-sub">
+          <span class="t-ko">고려대학교, 서울, 한국</span>
+          <span class="t-en">Korea University, Seoul, South Korea</span>
+          <span class="t-de">Korea University, Seoul, Südkorea</span>
+        </div>
+      </div>
+      <div class="entry-date">2014</div>
+    </div>
+  </section>
+
+  <!-- ── 연구 활동 ── -->
+  <section class="cv-section">
+    <div class="section-title">
+      <span class="t-ko">연구 활동</span><span class="t-en">Research</span><span class="t-de">Forschung</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">
+          <span class="t-ko">K-Democracy on the Road 제3회 프로그램 기획 및 진행 — 오거나이저</span>
+          <span class="t-en">K-Democracy on the Road (3rd Edition) — Organizer</span>
+          <span class="t-de">K-Democracy on the Road (3. Ausgabe) — Organisatorin</span>
+        </div>
+        <div class="entry-sub">
+          <span class="t-ko">전남대학교 5·18연구소 주최, 광주, 2026.5.15.</span>
+          <span class="t-en">May 18 Institute, Chonnam National University, Gwangju, 15 May 2026</span>
+          <span class="t-de">Mai-18-Institut, Chonnam National University, Gwangju, 15. Mai 2026</span>
+        </div>
+      </div>
+      <div class="entry-date">2026</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">
+          <span class="t-ko">제3회 5·18연구자대회 젠더 세션·사회비판 세션 기획 — 오거나이저</span>
+          <span class="t-en">3rd May 18 Researchers' Conference — Gender &amp; Social Critique Sessions, Organizer</span>
+          <span class="t-de">3. Konferenz der 5·18-Forschenden — Gender- und gesellschaftskritische Sektion, Organisatorin</span>
+        </div>
+        <div class="entry-sub">
+          <span class="t-ko">전남대학교 5·18연구소 주최, 광주, 2026.5.21–22.</span>
+          <span class="t-en">May 18 Institute, Chonnam National University, Gwangju, 21–22 May 2026</span>
+          <span class="t-de">Mai-18-Institut, Chonnam National University, Gwangju, 21.–22. Mai 2026</span>
+        </div>
+      </div>
+      <div class="entry-date">2026</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">Symposium: East Asian Student and Youth Movements in Comparative Perspective —
+          <span class="t-ko"> 오거나이징 스태프</span>
+          <span class="t-en"> Organizing Staff</span>
+          <span class="t-de"> Organisationsteam</span>
+        </div>
+        <div class="entry-sub">
+          <span class="t-ko">전남대학교 5·18연구소 주최, 광주, 2026.5.18–19.</span>
+          <span class="t-en">May 18 Institute, Chonnam National University, Gwangju, 18–19 May 2026</span>
+          <span class="t-de">Mai-18-Institut, Chonnam National University, Gwangju, 18.–19. Mai 2026</span>
+        </div>
+      </div>
+      <div class="entry-date">2026</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">
+          <span class="t-ko">출판기획 참여 및 원고 편집 — 편집자</span>
+          <span class="t-en">Publication Planning and Manuscript Editing — Editor</span>
+          <span class="t-de">Publikationsplanung und Manuskriptredaktion — Redakteurin</span>
+        </div>
+        <div class="entry-sub">
+          <span class="t-ko">국립현대무용단</span>
+          <span class="t-en">Korean National Contemporary Dance Company</span>
+          <span class="t-de">Koreanische Nationale Zeitgenössische Tanzkompanie</span>
+        </div>
+      </div>
+      <div class="entry-date">2013–2014</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">
+          <span class="t-ko">출판기획 참여 및 원고 편집 — 편집자</span>
+          <span class="t-en">Publication Planning and Manuscript Editing — Editor</span>
+          <span class="t-de">Publikationsplanung und Manuskriptredaktion — Redakteurin</span>
+        </div>
+        <div class="entry-sub">
+          <span class="t-ko">경기문화재단</span>
+          <span class="t-en">Gyeonggi Cultural Foundation</span>
+          <span class="t-de">Gyeonggi Cultural Foundation</span>
+        </div>
+      </div>
+      <div class="entry-date">2010</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">
+          <span class="t-ko">공연예술실태조사 — 연구보조원</span>
+          <span class="t-en">Survey of Performing Arts Status — Research Assistant</span>
+          <span class="t-de">Erhebung zum Stand der darstellenden Künste — Wissenschaftliche Hilfskraft</span>
+        </div>
+        <div class="entry-sub">
+          <span class="t-ko">문화체육관광부 (연구책임자: 박성혜)</span>
+          <span class="t-en">Ministry of Culture, Sports and Tourism (PI: Park Sung-Hye)</span>
+          <span class="t-de">Ministerium für Kultur, Sport und Tourismus (Leitung: Park Sung-Hye)</span>
+        </div>
+      </div>
+      <div class="entry-date">2009</div>
+    </div>
+  </section>
+
+  <!-- ── 출판 ── -->
+  <section class="cv-section">
+    <div class="section-title">
+      <span class="t-ko">출판</span><span class="t-en">Publications</span><span class="t-de">Publikationen</span>
+    </div>
+
+    <div class="pub-subcat">
+      <span class="t-ko">학술지 논문</span><span class="t-en">Journal Articles</span><span class="t-de">Zeitschriftenartikel</span>
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 「이론 주도적 인문 데이터 구축하기: 5·18 공식 기념 연설 코퍼스 사례」, 『민주주의와 인권』, 2026, Vol.26 No.2.</span>
+      <span class="t-en">Chung, Sungyoun, "Theory-driven Humanities Data Construction: The Case of the May 18 Official Commemorative Speech Corpus," <em>Minjujuuiwa Inkkwon</em>, 2026, Vol.26 No.2.</span>
+      <span class="t-de">Chung, Sungyoun, „Theoriegeleiteter Aufbau geisteswissenschaftlicher Daten: Der Fall des Korpus offizieller 5·18-Gedenkreden," <em>Minjujuuiwa Inkkwon</em>, 2026, Bd.26 Nr.2.</span>
+      <span class="pub-status review">
+        <span class="t-ko">심사중</span><span class="t-en">Under review</span><span class="t-de">Eingereicht</span>
+      </span>
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 「5·18 공식 기념 연설의 담론 구조 비교: 이행기정의 담론의 정권별 분화」, 『기억과 전망』, 2026, No.55.</span>
+      <span class="t-en">Chung, Sungyoun, "Comparative Analysis of Discourse Structures in Official May 18 Commemorative Speeches: Regime-specific Differentiation of Transitional Justice Discourse," <em>Memory and Prospect</em>, 2026, No.55.</span>
+      <span class="t-de">Chung, Sungyoun, „Vergleichende Analyse der Diskursstrukturen in offiziellen Gedenkreden zum 18. Mai," <em>Gieok gwa Jeonmang</em>, 2026, Nr.55.</span>
+      <span class="pub-status">
+        <span class="t-ko">게재 확정</span><span class="t-en">Accepted</span><span class="t-de">Angenommen</span>
+      </span>
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">김수진·정성윤, 「베를린 도심부 '기억의 장소'의 재맥락화와 문화자본으로의 전환」, 『도시연구』, 2026, No.29.</span>
+      <span class="t-en">Kim, Sujin and Chung, Sungyoun, "Recontextualization of 'Sites of Memory' in Downtown Berlin and their Transformation into Cultural Capital," <em>Urban Studies</em>, 2026, No.29.</span>
+      <span class="t-de">Kim, Sujin und Chung, Sungyoun, „Rekontextualisierung der Erinnerungsorte in der Berliner Innenstadt," <em>Dosi Yeongu</em>, 2026, Nr.29.</span>
+      <span class="pub-status">
+        <span class="t-ko">게재 확정</span><span class="t-en">Accepted</span><span class="t-de">Angenommen</span>
+      </span>
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 「'새로운 고전성'의 시작 ― 1929년 발터 베르텐이 기록한 독일 무용의 전환기」, 『한국무용학회지』, 2025, Vol.25 No.4.</span>
+      <span class="t-en">Chung, Sungyoun, "The Beginning of a 'New Classicism': Walter Berten's Account of a Turning Point in German Dance in 1929," <em>Journal of the Korean Dance Studies Association</em>, 2025, Vol.25 No.4.</span>
+      <span class="t-de">Chung, Sungyoun, „Der Beginn einer neuen Klassizität: Walter Bertens Beschreibung des Wendepunkts im deutschen Tanz 1929," <em>Journal of the Korean Dance Studies Association</em>, 2025, Bd.25 Nr.4.</span>
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 「용서 없는 화해는 가능한가: 한국 용서 화해 담론의 개념적 모순 분석」, 『민주주의와 인권』, 2025, Vol.25 No.4.</span>
+      <span class="t-en">Chung, Sungyoun, "Can Reconciliation Exist without Forgiveness? Analyzing Conceptual Contradictions in Korean Forgiveness-Reconciliation Discourse," <em>Minjujuuiwa Inkkwon</em>, 2025, Vol.25 No.4.</span>
+      <span class="t-de">Chung, Sungyoun, „Versöhnung ohne Vergebung? Konzeptuelle Widersprüche im koreanischen Versöhnungsdiskurs," <em>Minjujuuiwa Inkkwon</em>, 2025, Bd.25 Nr.4.</span>
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 「신체와 수행성을 통해 읽는 문화」, 『오늘의 문예비평』, 2021, Nr.123.</span>
+      <span class="t-en">Chung, Sungyoun, "Cultural Phenomena through Body Culture and Performativity," <em>Literary Criticism Today</em>, 2021, No.123.</span>
+      <span class="t-de">Chung, Sungyoun, „Kulturelle Phänomene durch Körperkultur und Performativität," <em>Literary Criticism Today</em>, 2021, Nr.123.</span>
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 「유엔기념공원의 중층적 정체성과 발전 방안」, 『항도부산』, 2019, Nr.38.</span>
+      <span class="t-en">Chung, Sungyoun, "Multi-layered Identity of the UN Memorial Cemetery and Suggestions for its Improvement," <em>Hangdo-Busan</em>, 2019, No.38.</span>
+      <span class="t-de">Chung, Sungyoun, „Die vielschichtige Identität des UN-Gedächtnisfriedhofs," <em>Hangdo-Busan</em>, 2019, Nr.38.</span>
+    </div>
+
+    <div class="pub-subcat">
+      <span class="t-ko">단행본 챕터</span><span class="t-en">Book Chapter</span><span class="t-de">Buchkapitel</span>
+    </div>
+    <div class="pub-item">
+      Chung, Sungyoun, "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung," in: Meike S. Baader und Alfons Kenkmann (Hrg.), <em>Jugendbewegung im Kalten Krieg</em>, Göttingen: V&amp;R Unipress, 2021. DOI: <a href="https://doi.org/10.14220/9783737013802.319" style="color:var(--accent); font-size:0.82rem;">10.14220/9783737013802.319</a>
+    </div>
+
+    <div class="pub-subcat">
+      <span class="t-ko">잡지·기고</span><span class="t-en">Magazine / Essays</span><span class="t-de">Magazin / Essays</span>
+    </div>
+    <div class="pub-item">
+      Chung, Sungyoun, "Ein Friedhof für elf Nationen. Einzige Kriegsgräberstätte der Vereinten Nationen liegt in Busan in Südkorea," <em>FRIEDEN</em>, Vol.2, 2023, S.26–27.
+    </div>
+    <div class="pub-item">
+      Chung, Sungyoun, "Südkorea – Zensur und schwarze Listen," <em>Tanz – Zeitschrift für Ballet, Tanz und Performance</em>, Theaterverlag, Berlin, Juli 2017.
+    </div>
+
+    <div class="pub-subcat">
+      <span class="t-ko">학위논문</span><span class="t-en">Thesis</span><span class="t-de">Abschlussarbeit</span>
+    </div>
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 「독일 국립 추도시설 노이에 바헤의 보편성과 특수성」, 고려대학교 석사학위논문, 2014.</span>
+      <span class="t-en">Chung, Sungyoun, "Universality and Specificity of Germany's National Memorial Space, Neue Wache," M.A. thesis, Korea University, 2014.</span>
+      <span class="t-de">Chung, Sungyoun, „Universalität und Spezifikum der nationalen Gedenkstätte Deutschlands, Neue Wache," Masterarbeit, Korea University, 2014.</span>
+    </div>
+  </section>
+
+  <!-- ── 학술 발표 ── -->
+  <section class="cv-section">
+    <div class="section-title">
+      <span class="t-ko">학술 발표</span><span class="t-en">Presentations</span><span class="t-de">Vorträge</span>
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 「보편적 기억이 실패할 때: 광주, 위안부, 그리고 이행기 정의와 코스모폴리탄 기억에 대한 탈식민적 비판」, 동아시아 국제학술회의, 삿포로대학, 삿포로, 2026.9.12. <em>(일정 확정)</em></span>
+      <span class="t-en">Chung, Sungyoun, "When Universal Memory Fails: Gwangju, Comfort Women, and a Decolonial Critique of Transitional Justice and Cosmopolitan Memory," East Asian International Academic Conference, Sapporo University, 12 Sep 2026. <em>(confirmed)</em></span>
+      <span class="t-de">Chung, Sungyoun, „Wenn das universelle Gedächtnis versagt," Internationale Ostasien-Konferenz, Universität Sapporo, 12. Sep. 2026. <em>(bestätigt)</em></span>
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 「보편적 기억이 실패할 때」, 제13회 세계한국학대회, 리츠메이칸대학, 교토, 2026.9.5–6. <em>(일정 확정)</em></span>
+      <span class="t-en">Chung, Sungyoun, "When Universal Memory Fails," 13th World Congress of Korean Studies, Ritsumeikan University, Kyoto, 5–6 Sep 2026. <em>(confirmed)</em></span>
+      <span class="t-de">Chung, Sungyoun, „Wenn das universelle Gedächtnis versagt," 13. Weltkongress der Koreanistik, Ritsumeikan-Universität, Kyoto, 5.–6. Sep. 2026. <em>(bestätigt)</em></span>
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 「아카이브로 읽는 번역된 몸: 독일에서의 한국 무용과 이애주」, 이애주춤아카이브 오픈 기념 학술토론회, 2026.5.7.</span>
+      <span class="t-en">Chung, Sungyoun, "The Translated Body Read through the Archive: Korean Dance in Germany and Lee Ae-ju," Academic Symposium for the Opening of the Lee Ae-ju Dance Archive, 7 May 2026.</span>
+      <span class="t-de">Chung, Sungyoun, „Der übersetzte Körper im Archiv: Koreanischer Tanz in Deutschland und Lee Ae-ju," Wissenschaftliches Symposium zur Eröffnung des Lee Ae-ju Tanzarchivs, 7. Mai 2026.</span>
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 「깨어 있는 기념 — 1980년부터 2024년까지 광주에서 기억의 형식들」, 5.18기념재단–에터스베르크재단 공동학술대회: 독재에서 민주주의로, 2024.11.1.</span>
+      <span class="t-en">Chung, Sungyoun, "Wakeful Commemoration: Forms of Memory in Gwangju from 1980 to 2024," Joint Conference May 18 Foundation &amp; Ettersberg Foundation: From Dictatorship to Democracy, 1 Nov 2024.</span>
+      <span class="t-de">Chung, Sungyoun, „Wachsames Gedenken: Formen der Erinnerung in Gwangju von 1980 bis 2024," Gemeinsame Konferenz der Mai-18-Stiftung und der Ettersberg-Stiftung, 1. Nov. 2024.</span>
+    </div>
+
+    <div class="pub-item">
+      Hettling, Manfred, Tino Schölz, Sungyoun Chung, "Der Mimizuka in Kyoto. Ein Grabmal als zwischenstaatliches Erinnerungsproblem," DAAD Zentrenkonferenz Tokio, 6 Nov 2021.
+    </div>
+
+    <div class="pub-item">
+      <span class="t-ko">정성윤, 유엔묘지 조성 70주년 학술세미나 패널 토론 (초청), 부산발전연구원, 부산, 2021.11.5.</span>
+      <span class="t-en">Chung, Sungyoun, Panel Discussion (invited), Seminar on the 70th Anniversary of the U.N. Cemetery, Busan Development Institute, Busan, 5 Nov 2021.</span>
+      <span class="t-de">Chung, Sungyoun, Podiumsdiskussion (eingeladen), Seminar zum 70. Jahrestag des UN-Friedhofs, Busan Development Institute, 5. Nov. 2021.</span>
+    </div>
+
+    <div class="pub-item">
+      Chung, Sungyoun, "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung," Workshop Jugendbewegungsforschung, Archiv der deutschen Jugendbewegung, Witzenhausen, 10–12 May 2019.
+    </div>
+  </section>
+
+  <!-- ── 번역 ── -->
+  <section class="cv-section">
+    <div class="section-title">
+      <span class="t-ko">번역</span><span class="t-en">Translations</span><span class="t-de">Übersetzungen</span>
+    </div>
+
+    <div class="pub-item">
+      Marianne Hirsch, <em>The Generation of Postmemory</em>,
+      <span class="t-ko">영어→한국어, 현실문화.</span>
+      <span class="t-en">English → Korean, Hyunsilmunhwa.</span>
+      <span class="t-de">Englisch → Koreanisch, Hyunsilmunhwa.</span>
+      <span class="pub-status">
+        <span class="t-ko">출판 예정 2027</span><span class="t-en">Forthcoming 2027</span><span class="t-de">In Vorbereitung 2027</span>
+      </span>
+    </div>
+
+    <div class="pub-item">
+      Hettling, Manfred, "Sinnstiftung und Sinnsuche. Gedenken an Tote politischer Gewalt im 20. Jahrhundert,"
+      <span class="t-ko">독일어→한국어, 민주화운동기념사업회, 2020.</span>
+      <span class="t-en">German → Korean, Korea Democracy Foundation, 2020.</span>
+      <span class="t-de">Deutsch → Koreanisch, Korea Democracy Foundation, 2020.</span>
+    </div>
+
+    <div class="pub-item">
+      Kenkmann, Alfons, "Erinnerungs- und Bildungsarbeit über die nationalsozialistische Herrschaft in Deutschland. Das Beispiel der Polizei,"
+      <span class="t-ko">독일어→한국어, 민주화운동기념사업회, 2020.</span>
+      <span class="t-en">German → Korean, Korea Democracy Foundation, 2020.</span>
+      <span class="t-de">Deutsch → Koreanisch, Korea Democracy Foundation, 2020.</span>
+    </div>
+    <div class="pub-note">
+      <span class="t-ko">수록: Manfred Hettling, Alfons Kenkmann 외, 『지구화 시대의 기념문화: 역사적 장소에서 만들어가는 민주·인권의 기억』, 민주화운동기념사업회, 2020.</span>
+      <span class="t-en">In: Manfred Hettling, Alfons Kenkmann et al., <em>Commemorative Culture in the Era of Globalization</em>, Korea Democracy Foundation, 2020.</span>
+      <span class="t-de">In: Manfred Hettling, Alfons Kenkmann u.a., <em>Gedenkkultur im Zeitalter der Globalisierung</em>, Korea Democracy Foundation, 2020.</span>
+    </div>
+  </section>
+
+  <!-- ── 수상 ── -->
+  <section class="cv-section">
+    <div class="section-title">
+      <span class="t-ko">수상 및 지원</span><span class="t-en">Awards &amp; Grants</span><span class="t-de">Auszeichnungen &amp; Förderungen</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">
+          <span class="t-ko">제1회 '임시수도 부산' 연구공모 우수상</span>
+          <span class="t-en">1st Research Competition Award, 'Provisional Capital Busan'</span>
+          <span class="t-de">Auszeichnung im 1. Forschungswettbewerb „Provisional Capital Busan"</span>
+        </div>
+        <div class="entry-sub">
+          <span class="t-ko">부산광역시 | 논문: 「유엔기념공원의 중층적 정체성과 발전 방안」</span>
+          <span class="t-en">Busan Metropolitan Government | for "Multi-layered Identity of the U.N. Memorial Cemetery"</span>
+          <span class="t-de">Stadtregierung Busan | für den Beitrag zur Identität des UN-Friedhofs</span>
+        </div>
+      </div>
+      <div class="entry-date">2018</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-left">
+        <div class="entry-title">
+          <span class="t-ko">JASSO 장학금</span>
+          <span class="t-en">JASSO Scholarship</span>
+          <span class="t-de">JASSO-Stipendium</span>
+        </div>
+        <div class="entry-sub">
+          Japan Student Services Organization (JASSO),
+          <span class="t-ko">도쿄, 일본</span><span class="t-en">Tokyo, Japan</span><span class="t-de">Tokio, Japan</span>
+        </div>
+      </div>
+      <div class="entry-date">2016</div>
+    </div>
+  </section>
+
+  <!-- ── 언어 ── -->
+  <section class="cv-section">
+    <div class="section-title">
+      <span class="t-ko">언어 능력</span><span class="t-en">Language Skills</span><span class="t-de">Sprachkenntnisse</span>
+    </div>
+    <div class="lang-list">
+      <div class="lang-item">
+        <div class="lang-name"><span class="t-ko">한국어</span><span class="t-en">Korean</span><span class="t-de">Koreanisch</span></div>
+        <div class="lang-level"><span class="t-ko">원어민</span><span class="t-en">Native</span><span class="t-de">Muttersprache</span></div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-name"><span class="t-ko">영어</span><span class="t-en">English</span><span class="t-de">Englisch</span></div>
+        <div class="lang-level">Fluent</div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-name"><span class="t-ko">독일어</span><span class="t-en">German</span><span class="t-de">Deutsch</span></div>
+        <div class="lang-level">Fluent</div>
+        <div class="lang-cert">C1</div>
+      </div>
+      <div class="lang-item">
+        <div class="lang-name"><span class="t-ko">일본어</span><span class="t-en">Japanese</span><span class="t-de">Japanisch</span></div>
+        <div class="lang-level">Fluent</div>
+        <div class="lang-cert">JLPT N1</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+function setLang(lang) {
+  document.body.className = 'lang-' + lang;
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim() === ({ko:'한국어',en:'English',de:'Deutsch'}[lang]));
+  });
+}
+</script>
+</body>
+</html>
