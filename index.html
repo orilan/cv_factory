@@ -308,7 +308,7 @@ function renderCVPage(){
       const sl=p.status&&p.status!=='published'?STAT_L[L][p.status]:'';
       const bc=p.status==='accepted'?'badge-accepted':p.status==='under-review'?'badge-review':p.status==='forthcoming'?'badge-forthcoming':'';
       const badge=sl?`<span class="badge ${bc}">${sl}</span>`:'';
-      const doi=p.doi?` DOI: <a href="${p.doi}" style="color:var(--accent);font-size:12px">${p.doi}</a>`:'';
+      const doi=p.doi?` DOI: <a href="${p.doi}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-size:12px">${p.doi}</a>`:'';
       pubHtml+=`<div class="pub-item">${d.authors}. (${p.year}). ${d.title}. <em>${d.journal}</em>${d.volume?' '+d.volume:''}.${doi}${badge}</div>`;
     });
   });
@@ -466,7 +466,7 @@ function renderBuilder(){
         const sl=p.status&&p.status!=='published'?STAT[L][p.status]:'';
         const bc=p.status==='accepted'?'badge-accepted':p.status==='under-review'?'badge-review':p.status==='forthcoming'?'badge-forthcoming':'';
         const badge=sl?`<span class="badge ${bc}">${sl}</span>`:'';
-        const doi=p.doi?` DOI: <a href="${p.doi}" style="color:var(--accent);font-size:12px">${p.doi}</a>`:'';
+        const doi=p.doi?` DOI: <a href="${p.doi}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-size:12px">${p.doi}</a>`:'';
         ph+=`<div class="pub-item">${d.authors}. (${p.year}). ${d.title}. <em>${d.journal}</em>${d.volume?' '+d.volume:''}.${doi}${badge}</div>`;
       });
     });
