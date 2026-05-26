@@ -421,6 +421,7 @@
         "body-culture",
         "cultural-studies"
       ],
+      "doi": "http://doi.org/10.26743/kaod.2026.25.4.019",
       "ko": {
         "authors": "정성윤",
         "title": "'새로운 고전성'의 시작 ― 1929년 발터 베르텐이 기록한 독일 무용의 전환기",
@@ -429,7 +430,7 @@
       },
       "en": {
         "authors": "Chung, Sungyoun",
-        "title": "The Beginning of a 'New Classicism': Walter Berten's Account of a Turning Point in German Dance in 1929",
+        "title": "The Beginning of New Classicism: Walter Berten's 1929 Record of German Dance at a Turning Point",
         "journal": "Journal of the Korean Dance Studies Association",
         "volume": "Vol.25 No.4"
       },
@@ -452,6 +453,7 @@
         "transitional-justice",
         "comparative-studies"
       ],
+      "doi": "http://doi.org/10.62082/JDHR.2025.12.25.4.229",
       "ko": {
         "authors": "정성윤",
         "title": "용서 없는 화해는 가능한가: 한국 용서 화해 담론의 개념적 모순 분석",
@@ -460,7 +462,7 @@
       },
       "en": {
         "authors": "Chung, Sungyoun",
-        "title": "Can Reconciliation Exist without Forgiveness? Analyzing Conceptual Contradictions in Korean Forgiveness-Reconciliation Discourse",
+        "title": "Reconciliation Without Forgiveness: Conceptual Contradictions in South Korean Discourse on Forgiveness and Reconciliation",
         "journal": "Minjujuuiwa Inkkwon (Democracy and Human Rights)",
         "volume": "Vol.25 No.4"
       },
@@ -513,21 +515,22 @@
         "japan",
         "comparative-studies"
       ],
+      "doi": "http://doi.org/10.19169/hd.2019.8.38.285",
       "ko": {
         "authors": "정성윤",
-        "title": "유엔기념공원의 중층적 정체성과 발전 방안",
+        "title": "유엔기념공원의 중층적 정체성과 구조적 문제점",
         "journal": "항도부산",
         "volume": "Nr.38"
       },
       "en": {
         "authors": "Chung, Sungyoun",
-        "title": "Multi-layered Identity of the UN Memorial Cemetery and Suggestions for its Improvement",
+        "title": "Multi-layered Identity of the UN Memorial Cemetery in Korea and its structural problem",
         "journal": "Hangdo-Busan",
         "volume": "No.38"
       },
       "de": {
         "authors": "Chung, Sungyoun",
-        "title": "Die vielschichtige Identität des UN-Gedächtnisfriedhofs und Vorschläge zu seiner Weiterentwicklung",
+        "title": "Multi-layered Identity of the UN Memorial Cemetery in Korea and its structural problem",
         "journal": "Hangdo-Busan",
         "volume": "Nr.38"
       }
@@ -959,12 +962,12 @@
       "ko": {
         "title": "제1회 '임시수도 부산' 연구공모 우수상",
         "organization": "부산광역시",
-        "detail": "논문: 「유엔기념공원의 중층적 정체성과 발전 방안」"
+        "detail": "논문: 「유엔기념공원의 중층적 정체성과 구조적 문제점」"
       },
       "en": {
         "title": "1st Research Competition Award, 'Provisional Capital Busan'",
         "organization": "Busan Metropolitan Government",
-        "detail": "For \"Multi-layered Identity of the U.N. Memorial Cemetery and suggestions for its improvement\""
+        "detail": "For \"Multi-layered Identity of the UN Memorial Cemetery in Korea and its structural problem\""
       },
       "de": {
         "title": "Auszeichnung im 1. Forschungswettbewerb \"Provisional Capital Busan\"",
