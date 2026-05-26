@@ -385,7 +385,7 @@ function buildSecControls(){
     const label=SEC_L[L][sec];
     if(sec==='languages'){
       h+=`<div class="sc-block"><div class="sc-head"><span class="sc-name">${label}</span></div>
-        <label class="item-row"><input type="checkbox" ${checked.languages?'checked':''} onchange="checked.languages=this.checked;renderBuilder()">
+        <label class="item-row"><input type="checkbox" ${checked.languages?'checked':''} onchange="toggleLang(this.checked)">
         <div class="item-row-text"><div class="item-row-title">${L==='ko'?'언어 능력 전체':L==='en'?'All language skills':'Alle Sprachkenntnisse'}</div></div></label></div>`;
       return;
     }
@@ -402,7 +402,7 @@ function buildSecControls(){
       const bc=item.status==='accepted'?'badge-accepted':item.status==='under-review'?'badge-review':item.status==='forthcoming'?'badge-forthcoming':'';
       const badge=sl?`<span class="badge ${bc}" style="font-size:8px">${sl}</span>`:'';
       const tags=(item.tags||[]).map(t=>`<span class="itag ${activeTags.has(t)?'active':''}">${t}</span>`).join('');
-      h+=`<label class="item-row"><input type="checkbox" ${checked[item.id]?'checked':''} onchange="checked['${item.id}']=this.checked;renderBuilder()">
+      h+=`<label class="item-row"><input type="checkbox" ${checked[item.id]?'checked':''} onchange="toggleItem('${item.id}',this.checked)">
         <div class="item-row-text">
           <div class="item-row-title">${title}${badge}</div>
           <div class="item-row-meta">${meta}</div>
@@ -414,6 +414,8 @@ function buildSecControls(){
   document.getElementById('secControls').innerHTML=h;
 }
 
+function toggleItem(id,val){checked[id]=val;renderBuilder();}
+function toggleLang(val){checked.languages=val;renderBuilder();}
 function toggleSec(sec,val){
   if(sec==='languages'){checked.languages=val;}
   else(CV[sec]||[]).forEach(i=>checked[i.id]=val);
