@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Builder — Sungyoun Chung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #1c1c1c;
+  --ink-mid: #3a3a3a;
+  --ink-light: #6b6b6b;
+  --ink-faint: #999;
+  --accent: #2c5f9e;
+  --accent-bg: #e8f0fb;
+  --success: #2a7a4b;
+  --success-bg: #e6f4ec;
+  --warn: #b07800;
+  --warn-bg: #fdf3dc;
+  --rule: #d8d8d4;
+  --bg: #f4f3f0;
+  --panel: #ffffff;
+  --tag-bg: #eef2f8;
+  --serif: 'EB Garamond', 'Noto Serif KR', Georgia, serif;
+  --sans: 'Noto Sans KR', sans-serif;
+  --radius: 6px;
+}
+
+body { background: var(--bg); font-family: var(--sans); color: var(--ink); font-size: 14px; }
+
+/* ── LAYOUT ── */
+.app { display: grid; grid-template-columns: 320px 1fr; min-height: 100vh; }
+
+/* ── SIDEBAR ── */
+.sidebar {
+  background: var(--panel);
+  border-right: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+}
+.sidebar-header {
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  background: var(--panel);
+  z-index: 10;
+}
+.sidebar-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+}
+
+/* Lang selector */
+.lang-row { display: flex; gap: 4px; margin-bottom: 12px; }
+.lang-btn {
+  flex: 1;
+  padding: 5px 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: none;
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-light);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.lang-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 500; }
+
+/* Action buttons */
+.action-row { display: flex; gap: 6px; }
+.btn {
+  flex: 1;
+  padding: 7px 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
+  background: none;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-mid);
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.btn:hover { background: var(--bg); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-primary:hover { background: #245089; }
+
+/* Tag filter */
+.filter-section { padding: 14px 20px; border-bottom: 1px solid var(--rule); }
+.filter-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 8px;
+}
+.tags-wrap { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag-filter {
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid var(--rule);
+  background: none;
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-light);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tag-filter:hover { border-color: var(--accent); color: var(--accent); }
+.tag-filter.active { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); font-weight: 500; }
+
+/* Section controls */
+.section-controls { padding: 14px 20px; flex: 1; overflow-y: auto; }
+.sec-block { margin-bottom: 16px; }
+.sec-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.sec-name {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+}
+.sec-toggle-all {
+  font-size: 10px;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.item-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.1s;
+  margin-bottom: 2px;
+}
+.item-check:hover { background: var(--bg); }
+.item-check input[type="checkbox"] { margin-top: 3px; flex-shrink: 0; accent-color: var(--accent); cursor: pointer; }
+.item-label { font-size: 12px; color: var(--ink-mid); line-height: 1.45; }
+.item-meta { font-size: 10px; color: var(--ink-faint); margin-top: 1px; }
+.item-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 3px; }
+.item-tag {
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: var(--tag-bg);
+  color: var(--ink-light);
+}
+.item-tag.active { background: var(--accent-bg); color: var(--accent); }
+
+/* Status badges */
+.badge {
+  display: inline-block;
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: middle;
+  font-family: var(--sans);
+}
+.badge-accepted { background: var(--success-bg); color: var(--success); }
+.badge-review   { background: var(--warn-bg); color: var(--warn); }
+.badge-forthcoming { background: var(--accent-bg); color: var(--accent); }
+
+/* ── PREVIEW PANEL ── */
+.preview-panel {
+  padding: 40px 60px;
+  max-width: 900px;
+}
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.preview-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.preview-count {
+  font-size: 12px;
+  color: var(--ink-light);
+}
+
+/* ── CV OUTPUT ── */
+.cv-out { font-family: var(--serif); }
+.cv-name-out {
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.cv-title-out {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.cv-contact-out {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-mid);
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid var(--ink);
+}
+.cv-sec-title {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 0.5px solid var(--rule);
+  margin-top: 32px;
+}
+.cv-subcat {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  margin: 16px 0 8px;
+  padding-left: 10px;
+  border-left: 2px solid var(--accent);
+}
+.cv-entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 20px;
+  margin-bottom: 14px;
+}
+.cv-entry-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+.cv-entry-sub {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+.cv-entry-date {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  padding-top: 3px;
+}
+.cv-pub {
+  font-size: 14px;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  margin-bottom: 8px;
+  padding-left: 14px;
+  position: relative;
+}
+.cv-pub::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10px;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--rule);
+}
+.cv-pub .status-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.cv-pub .status-accepted { background: var(--success-bg); color: var(--success); }
+.cv-pub .status-review    { background: var(--warn-bg); color: var(--warn); }
+.cv-pub .status-forthcoming { background: var(--accent-bg); color: var(--accent); }
+.cv-pub-note {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-faint);
+  font-style: italic;
+  padding-left: 14px;
+  margin-bottom: 8px;
+}
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.lang-card {
+  background: var(--bg);
+  border: 0.5px solid var(--rule);
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+.lang-card-name {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.lang-card-level {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-light);
+}
+.lang-card-cert {
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--accent);
+}
+.empty-msg {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--ink-faint);
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+/* ── PRINT ── */
+@media print {
+  .sidebar { display: none !important; }
+  .app { display: block; }
+  .preview-panel { padding: 0; max-width: 100%; }
+  .preview-header { display: none; }
+  body { background: #fff; font-size: 12px; }
+  .cv-name-out { font-size: 2rem; }
+  .cv-pub { font-size: 12px; }
+  .cv-entry-title { font-size: 13px; }
+  @page { margin: 2cm; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">CV Builder</div>
+      <div class="lang-row">
+        <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
+        <button class="lang-btn" onclick="setLang('en')">English</button>
+        <button class="lang-btn" onclick="setLang('de')">Deutsch</button>
+      </div>
+      <div class="action-row">
+        <button class="btn" onclick="selectAll()">전체 선택</button>
+        <button class="btn" onclick="clearAll()">전체 해제</button>
+        <button class="btn btn-primary" onclick="window.print()">⎙ PDF</button>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-label">태그 필터</div>
+      <div class="tags-wrap" id="tagFilters"></div>
+    </div>
+
+    <div class="section-controls" id="sectionControls"></div>
+  </aside>
+
+  <!-- ── PREVIEW ── -->
+  <main class="preview-panel">
+    <div class="preview-header">
+      <span class="preview-label">미리보기</span>
+      <span class="preview-count" id="previewCount"></span>
+    </div>
+    <div class="cv-out" id="cvOutput"></div>
+  </main>
+
+</div>
+
+<script>
+// ── STATE ──
+let CV = null;
+let lang = 'ko';
+let activeTags = new Set();
+let checked = {};   // id → bool
+
+const ALL_TAGS = [
+  '518','memory','dance','germany','korea','japan',
+  'transitional-justice','body-culture','history','cultural-studies',
+  'weimar','commemoration','digital-humanities','data',
+  'performing-arts','comparative-studies'
+];
+
+const SEC_LABELS = {
+  ko: { education:'학력', research:'연구 활동', publications:'출판', presentations:'학술 발표', translations:'번역', awards:'수상 및 지원', languages:'언어 능력' },
+  en: { education:'Education', research:'Research', publications:'Publications', presentations:'Presentations', translations:'Translations', awards:'Awards & Grants', languages:'Language Skills' },
+  de: { education:'Ausbildung', research:'Forschung', publications:'Publikationen', presentations:'Vorträge', translations:'Übersetzungen', awards:'Auszeichnungen & Förderungen', languages:'Sprachkenntnisse' }
+};
+
+const PUB_TYPE_LABELS = {
+  ko: { journal:'학술지 논문', 'book-chapter':'단행본 챕터', magazine:'잡지·기고', thesis:'학위논문' },
+  en: { journal:'Journal Articles', 'book-chapter':'Book Chapter', magazine:'Magazine / Essays', thesis:'Thesis' },
+  de: { journal:'Zeitschriftenartikel', 'book-chapter':'Buchkapitel', magazine:'Magazin / Essays', thesis:'Abschlussarbeit' }
+};
+
+const STATUS_LABELS = {
+  ko: { accepted:'게재 확정', 'under-review':'심사중', forthcoming:'출판 예정', published:'' },
+  en: { accepted:'Accepted', 'under-review':'Under review', forthcoming:'Forthcoming', published:'' },
+  de: { accepted:'Angenommen', 'under-review':'Eingereicht', forthcoming:'In Vorbereitung', published:'' }
+};
+
+// ── LOAD DATA ──
+async function loadData() {
+  try {
+    const res = await fetch('./cv_data.json');
+    CV = await res.json();
+    initChecked();
+    buildTagFilters();
+    buildSidebar();
+    renderCV();
+  } catch(e) {
+    document.getElementById('cvOutput').innerHTML =
+      `<div class="empty-msg">⚠️ cv_data.json 파일을 찾을 수 없습니다.<br>같은 폴더에 cv_data.json이 있는지 확인해주세요.</div>`;
+  }
+}
+
+function initChecked() {
+  const allSecs = ['education','research','publications','presentations','translations','awards','languages'];
+  allSecs.forEach(sec => {
+    if (sec === 'languages') { checked['languages'] = true; return; }
+    (CV[sec] || []).forEach(item => { checked[item.id] = true; });
+  });
+  checked['personal'] = true;
+}
+
+// ── TAG FILTERS ──
+function buildTagFilters() {
+  const wrap = document.getElementById('tagFilters');
+  wrap.innerHTML = ALL_TAGS.map(tag =>
+    `<button class="tag-filter" data-tag="${tag}" onclick="toggleTag('${tag}')">${tag}</button>`
+  ).join('');
+}
+
+function toggleTag(tag) {
+  if (activeTags.has(tag)) {
+    activeTags.delete(tag);
+  } else {
+    activeTags.add(tag);
+    // auto-check items with this tag
+    applyTagFilter(tag, true);
+  }
+  document.querySelectorAll('.tag-filter').forEach(b => {
+    b.classList.toggle('active', activeTags.has(b.dataset.tag));
+  });
+  buildSidebar();
+  renderCV();
+}
+
+function applyTagFilter(tag, check) {
+  const ids = CV.tags_index[tag] || [];
+  ids.forEach(id => { checked[id] = check; });
+}
+
+// ── SIDEBAR ITEMS ──
+function buildSidebar() {
+  const ctrl = document.getElementById('sectionControls');
+  const sections = ['education','research','publications','presentations','translations','awards','languages'];
+  let html = '';
+
+  sections.forEach(sec => {
+    const label = SEC_LABELS[lang][sec];
+    if (sec === 'languages') {
+      html += `<div class="sec-block">
+        <div class="sec-head"><span class="sec-name">${label}</span></div>
+        <label class="item-check">
+          <input type="checkbox" ${checked['languages'] ? 'checked' : ''} onchange="toggleItem('languages', this.checked)">
+          <div><div class="item-label">${lang==='ko'?'언어 능력 전체':lang==='en'?'All language skills':'Alle Sprachkenntnisse'}</div></div>
+        </label>
+      </div>`;
+      return;
+    }
+    const items = CV[sec] || [];
+    const visibleItems = activeTags.size > 0
+      ? items.filter(item => item.tags && item.tags.some(t => activeTags.has(t)))
+      : items;
+
+    if (!visibleItems.length) return;
+
+    html += `<div class="sec-block">
+      <div class="sec-head">
+        <span class="sec-name">${label}</span>
+        <button class="sec-toggle-all" onclick="toggleSection('${sec}', true)">전체</button>
+      </div>`;
+
+    visibleItems.forEach(item => {
+      const d = item[lang] || item.ko || {};
+      const titleText = d.title || d.degree || d.language || item.original_title || '';
+      const metaText = d.journal || d.institution || d.event || d.role || (item.year || item.period || '');
+      const yearText = item.year || item.period || '';
+      const statusLabel = item.status ? STATUS_LABELS[lang][item.status] : '';
+      const badgeClass = item.status === 'accepted' ? 'badge-accepted' : item.status === 'under-review' ? 'badge-review' : item.status === 'forthcoming' ? 'badge-forthcoming' : '';
+      const badge = statusLabel ? `<span class="badge ${badgeClass}">${statusLabel}</span>` : '';
+
+      const itemTags = (item.tags || []).map(t =>
+        `<span class="item-tag ${activeTags.has(t) ? 'active' : ''}">${t}</span>`
+      ).join('');
+
+      html += `<label class="item-check">
+        <input type="checkbox" ${checked[item.id] ? 'checked' : ''} onchange="toggleItem('${item.id}', this.checked)">
+        <div>
+          <div class="item-label">${titleText}${badge}</div>
+          <div class="item-meta">${yearText}${metaText ? ' · ' + metaText : ''}</div>
+          ${itemTags ? `<div class="item-tags">${itemTags}</div>` : ''}
+        </div>
+      </label>`;
+    });
+
+    html += `</div>`;
+  });
+
+  ctrl.innerHTML = html;
+}
+
+function toggleItem(id, val) {
+  checked[id] = val;
+  renderCV();
+}
+
+function toggleSection(sec, val) {
+  if (sec === 'languages') { checked['languages'] = val; }
+  else (CV[sec] || []).forEach(item => { checked[item.id] = val; });
+  buildSidebar();
+  renderCV();
+}
+
+function selectAll() {
+  Object.keys(checked).forEach(k => checked[k] = true);
+  buildSidebar();
+  renderCV();
+}
+
+function clearAll() {
+  Object.keys(checked).forEach(k => checked[k] = false);
+  buildSidebar();
+  renderCV();
+}
+
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach((b,i) => b.classList.toggle('active', ['ko','en','de'][i] === l));
+  buildSidebar();
+  renderCV();
+}
+
+// ── RENDER CV ──
+function renderCV() {
+  const out = document.getElementById('cvOutput');
+  let html = '';
+  let totalItems = 0;
+
+  // Personal header (always shown)
+  const p = CV.personal[lang];
+  html += `<div>
+    <div class="cv-name-out">${p.name}</div>
+    <div class="cv-title-out">${p.title}</div>
+    <div class="cv-contact-out">${p.email} &nbsp;|&nbsp; ${p.phone}</div>
+  </div>`;
+
+  // Research interests
+  html += `<div class="cv-sec-title">${lang==='ko'?'연구 관심사':lang==='en'?'Research Interests':'Forschungsinteressen'}</div>`;
+  html += p.interests.map(i => `<div style="font-family:var(--serif);font-size:15px;color:var(--ink-mid);margin-bottom:5px;padding-left:12px;">— ${i}</div>`).join('');
+
+  // Education
+  const eduItems = (CV.education || []).filter(e => checked[e.id]);
+  if (eduItems.length) {
+    html += `<div class="cv-sec-title">${SEC_LABELS[lang].education}</div>`;
+    eduItems.forEach(e => {
+      const d = e[lang] || e.ko;
+      html += `<div class="cv-entry">
+        <div>
+          <div class="cv-entry-title">${d.degree}${d.field ? ' — ' + d.field : ''}</div>
+          <div class="cv-entry-sub">${d.institution}${d.location ? ', ' + d.location : ''}</div>
+          ${d.thesis ? `<div class="cv-entry-sub" style="font-style:italic;">${lang==='de'?'Abschlussarbeit':lang==='en'?'Thesis':'석사논문'}: ${d.thesis}</div>` : ''}
+        </div>
+        <div class="cv-entry-date">${e.period}</div>
+      </div>`;
+      totalItems++;
+    });
+  }
+
+  // Research
+  const resItems = (CV.research || []).filter(e => checked[e.id]);
+  if (resItems.length) {
+    html += `<div class="cv-sec-title">${SEC_LABELS[lang].research}</div>`;
+    resItems.forEach(e => {
+      const d = e[lang] || e.ko;
+      html += `<div class="cv-entry">
+        <div>
+          <div class="cv-entry-title">${d.title} — <span style="font-weight:400;">${d.role}</span></div>
+          <div class="cv-entry-sub">${d.institution}${d.date ? ', ' + d.date : ''}</div>
+        </div>
+        <div class="cv-entry-date">${e.period}</div>
+      </div>`;
+      totalItems++;
+    });
+  }
+
+  // Publications by type
+  const pubItems = (CV.publications || []).filter(e => checked[e.id]);
+  if (pubItems.length) {
+    html += `<div class="cv-sec-title">${SEC_LABELS[lang].publications}</div>`;
+    const types = ['journal','book-chapter','magazine','thesis'];
+    types.forEach(type => {
+      const group = pubItems.filter(p => p.type === type);
+      if (!group.length) return;
+      html += `<div class="cv-subcat">${PUB_TYPE_LABELS[lang][type]}</div>`;
+      group.forEach(p => {
+        const d = p[lang] || p.ko;
+        const statusLabel = p.status !== 'published' ? STATUS_LABELS[lang][p.status] : '';
+        const statusClass = p.status === 'accepted' ? 'status-accepted' : p.status === 'under-review' ? 'status-review' : p.status === 'forthcoming' ? 'status-forthcoming' : '';
+        const badge = statusLabel ? `<span class="status-tag ${statusClass}">${statusLabel}</span>` : '';
+        const doi = p.doi ? ` DOI: <a href="${p.doi}" style="color:var(--accent);font-size:12px;">${p.doi}</a>` : '';
+        html += `<div class="cv-pub">
+          ${d.authors}. (${p.year}). ${d.title}. <em>${d.journal}</em>${d.volume ? ' ' + d.volume : ''}.${doi}${badge}
+        </div>`;
+        totalItems++;
+      });
+    });
+  }
+
+  // Presentations
+  const preItems = (CV.presentations || []).filter(e => checked[e.id]);
+  if (preItems.length) {
+    html += `<div class="cv-sec-title">${SEC_LABELS[lang].presentations}</div>`;
+    preItems.forEach(e => {
+      const d = e[lang] || e.ko;
+      const confirmed = e.confirmed ? ` <span style="font-size:11px;color:var(--success);">(${lang==='ko'?'일정 확정':lang==='en'?'confirmed':'bestätigt'})</span>` : '';
+      const co = e.coauthors ? `<div class="cv-entry-sub">${lang==='de'?'mit':'with'} ${e.coauthors}</div>` : '';
+      html += `<div class="cv-pub">
+        ${d.title}. <em>${d.event}</em>${d.location ? ', ' + d.location : ''}${d.date ? ', ' + d.date : ''}.${confirmed}
+        ${co}
+      </div>`;
+      totalItems++;
+    });
+  }
+
+  // Translations
+  const traItems = (CV.translations || []).filter(e => checked[e.id]);
+  if (traItems.length) {
+    html += `<div class="cv-sec-title">${SEC_LABELS[lang].translations}</div>`;
+    let lastCollection = null;
+    traItems.forEach(e => {
+      const d = e[lang] || e.ko;
+      const dirLabel = e.direction === 'en→ko'
+        ? (lang==='ko'?'영어→한국어':lang==='en'?'English → Korean':'Englisch → Koreanisch')
+        : (lang==='ko'?'독일어→한국어':lang==='en'?'German → Korean':'Deutsch → Koreanisch');
+      const statusLabel = e.status !== 'published' ? STATUS_LABELS[lang][e.status] : '';
+      const statusClass = e.status === 'forthcoming' ? 'status-forthcoming' : '';
+      const badge = statusLabel ? `<span class="status-tag ${statusClass}">${statusLabel}</span>` : '';
+      html += `<div class="cv-pub">
+        ${e.original_author}, <em>${e.original_title}</em> (${dirLabel}), ${d.publisher}, ${e.year}.${badge}
+      </div>`;
+      if (e.collection) {
+        const col = e.collection[lang] || e.collection.ko;
+        if (col !== lastCollection) {
+          html += `<div class="cv-pub-note">${lang==='ko'?'수록':lang==='en'?'In':'In'}: ${col}</div>`;
+          lastCollection = col;
+        }
+      }
+      totalItems++;
+    });
+  }
+
+  // Awards
+  const awdItems = (CV.awards || []).filter(e => checked[e.id]);
+  if (awdItems.length) {
+    html += `<div class="cv-sec-title">${SEC_LABELS[lang].awards}</div>`;
+    awdItems.forEach(e => {
+      const d = e[lang] || e.ko;
+      html += `<div class="cv-entry">
+        <div>
+          <div class="cv-entry-title">${d.title}</div>
+          <div class="cv-entry-sub">${d.organization}${d.detail ? ' | ' + d.detail : ''}</div>
+        </div>
+        <div class="cv-entry-date">${e.year}</div>
+      </div>`;
+      totalItems++;
+    });
+  }
+
+  // Languages
+  if (checked['languages']) {
+    html += `<div class="cv-sec-title">${SEC_LABELS[lang].languages}</div>`;
+    html += `<div class="lang-grid">`;
+    CV.languages.forEach(l => {
+      const langName = l.language.split(' / ')[lang==='ko'?0:lang==='en'?1:2] || l.language.split(' / ')[0];
+      const levelKey = `level_${lang}`;
+      html += `<div class="lang-card">
+        <div class="lang-card-name">${langName}</div>
+        <div class="lang-card-level">${l[levelKey] || l.level_ko}</div>
+        ${l.cert ? `<div class="lang-card-cert">${l.cert}</div>` : ''}
+      </div>`;
+    });
+    html += `</div>`;
+    totalItems++;
+  }
+
+  out.innerHTML = html || `<div class="empty-msg">항목을 선택하면 여기에 미리보기가 표시됩니다.</div>`;
+  document.getElementById('previewCount').textContent = `${totalItems}개 항목 선택됨`;
+}
+
+loadData();
+</script>
+</body>
+</html>
