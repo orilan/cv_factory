@@ -159,6 +159,33 @@
   ],
   "research": [
     {
+      "id": "res-00",
+      "period": "2026",
+      "tags": [
+        "518",
+        "korea",
+        "memory"
+      ],
+      "ko": {
+        "title": "학술지 『민주주의와 인권』 편집간사",
+        "role": "편집간사",
+        "institution": "전남대학교 5·18연구소",
+        "date": ""
+      },
+      "en": {
+        "title": "Editorial Secretary, Academic Journal Minjujuuiwa Inkkwon (Democracy and Human Rights)",
+        "role": "Editorial Secretary",
+        "institution": "May 18 Institute, Chonnam National University",
+        "date": ""
+      },
+      "de": {
+        "title": "Redaktionssekretär, Fachzeitschrift Minjujuuiwa Inkkwon (Democracy and Human Rights)",
+        "role": "Redaktionssekretär",
+        "institution": "Mai-18-Institut, Chonnam National University",
+        "date": ""
+      }
+    },
+    {
       "id": "res-01",
       "period": "2026",
       "tags": [
@@ -817,7 +844,7 @@
         "korea",
         "comparative-studies"
       ],
-      "coauthors": "Hettling, Manfred; Schölz, Tino",
+      "coauthors": "Manfred Hettling, Tino Schölz",
       "ko": {
         "title": "Der Mimizuka in Kyoto. Ein Grabmal als zwischenstaatliches Erinnerungsproblem",
         "event": "DAAD 센터 콘퍼런스 도쿄",
@@ -1061,6 +1088,7 @@
   ],
   "tags_index": {
     "518": [
+      "res-00",
       "pub-01",
       "pub-02",
       "pub-05",
@@ -1071,6 +1099,7 @@
       "res-02"
     ],
     "memory": [
+      "res-00",
       "pub-02",
       "pub-03",
       "pub-05",
@@ -1110,6 +1139,7 @@
       "edu-02"
     ],
     "korea": [
+      "res-00",
       "pub-01",
       "pub-02",
       "pub-05",
