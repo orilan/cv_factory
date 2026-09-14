@@ -533,36 +533,6 @@
       }
     },
     {
-      "id": "pub-08",
-      "type": "book-chapter",
-      "year": "2021",
-      "status": "published",
-      "tags": [
-        "dance",
-        "germany",
-        "history",
-        "weimar",
-        "body-culture",
-        "cultural-studies"
-      ],
-      "doi": "https://doi.org/10.14220/9783737013802.319",
-      "ko": {
-        "authors": "Chung, Sungyoun",
-        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
-        "journal": "V&R Unipress (in: Baader/Kenkmann Hrg., Jugendbewegung im Kalten Krieg, Göttingen)"
-      },
-      "en": {
-        "authors": "Chung, Sungyoun",
-        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
-        "journal": "V&R Unipress (in: Baader/Kenkmann eds., Jugendbewegung im Kalten Krieg, Göttingen)"
-      },
-      "de": {
-        "authors": "Chung, Sungyoun",
-        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
-        "journal": "V&R Unipress (in: Baader/Kenkmann Hrg., Jugendbewegung im Kalten Krieg, Göttingen)"
-      }
-    },
-    {
       "id": "pub-12",
       "type": "book-chapter",
       "year": "2026",
@@ -592,6 +562,37 @@
         "title": "Challenges of an untimely monument: The \"Mimizuka\" in Kyōto (1597)",
         "journal": "In A. Kawakita, C. G. Krüger, & H. Hiramatsu (Eds.), Cooperation or coexistence? History of reconciliation in Europe and Asia. Vandenhoeck & Ruprecht Unipress",
         "volume": ""
+      },
+      "doi": "http://dx.doi.org/10.17169/refubium-53491"
+    },
+    {
+      "id": "pub-08",
+      "type": "book-chapter",
+      "year": "2021",
+      "status": "published",
+      "tags": [
+        "dance",
+        "germany",
+        "history",
+        "weimar",
+        "body-culture",
+        "cultural-studies"
+      ],
+      "doi": "https://doi.org/10.14220/9783737013802.319",
+      "ko": {
+        "authors": "Chung, Sungyoun",
+        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
+        "journal": "V&R Unipress (in: Baader/Kenkmann Hrg., Jugendbewegung im Kalten Krieg, Göttingen)"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
+        "journal": "V&R Unipress (in: Baader/Kenkmann eds., Jugendbewegung im Kalten Krieg, Göttingen)"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
+        "journal": "V&R Unipress (in: Baader/Kenkmann Hrg., Jugendbewegung im Kalten Krieg, Göttingen)"
       }
     },
     {
@@ -699,22 +700,22 @@
       ],
       "confirmed": false,
       "ko": {
-        "title": "보편적 기억이 실패할 때: 과거사 문제의 두 가지 구성방식",
+        "title": "보편적 기억이 실패할 때: 5.18과 위안부 문제로 보는 한국의 공적 기억 구성",
         "event": "동아시아 국제학술회의",
         "location": "삿포로대학, 삿포로",
-        "date": "2026.9.12."
+        "date": "2026.9.11–12."
       },
       "en": {
         "title": "When Universal Memory Fails: Two Configurations of Confronting the Past — 5.18 and the Japanese Military \"Comfort Women\" Issue",
         "event": "East Asian International Academic Conference",
         "location": "Sapporo University, Sapporo",
-        "date": "12 Sep 2026"
+        "date": "11–12 Sep 2026"
       },
       "de": {
         "title": "When Universal Memory Fails: Two Configurations of Confronting the Past — 5.18 and the Japanese Military \"Comfort Women\" Issue",
         "event": "Internationale Ostasien-Konferenz",
         "location": "Universität Sapporo, Sapporo",
-        "date": "12. Sep. 2026"
+        "date": "11.–12. Sep. 2026"
       }
     },
     {
@@ -731,7 +732,7 @@
       ],
       "confirmed": false,
       "ko": {
-        "title": "보편적 기억이 실패할 때: 과거사 문제의 두 가지 구성방식",
+        "title": "보편적 기억이 실패할 때: 한국 과거사 문제의 두 가지 구성방식",
         "event": "제13회 세계한국학대회",
         "location": "리츠메이칸대학, 교토",
         "date": "2026.9.5–6."
