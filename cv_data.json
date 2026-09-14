@@ -53,7 +53,7 @@
       ],
       "ko": {
         "degree": "박사 (수료)",
-        "field": "사학 (독일사)",
+        "field": "역사학",
         "institution": "Martin-Luther-Universität Halle-Wittenberg",
         "location": "할레, 독일"
       },
@@ -81,7 +81,7 @@
       ],
       "ko": {
         "degree": "문학석사",
-        "field": "사학 (서양사)",
+        "field": "사학",
         "institution": "고려대학교",
         "location": "서울, 한국",
         "thesis": "독일 국립 추도시설 노이에 바헤의 보편성과 특수성"
@@ -168,7 +168,7 @@
         "comparative-studies"
       ],
       "ko": {
-        "title": "전남대학교 글로벌NGO협동과정(Global NGO's Master Program) 역량 강화 프로그램 'K-Democracy on the Road'",
+        "title": "K-Democracy on the Road 제3회 프로그램 기획 및 진행",
         "role": "오거나이저",
         "institution": "전남대학교 5·18연구소 주최, 광주",
         "date": "2026.5.15."
@@ -196,7 +196,7 @@
         "transitional-justice"
       ],
       "ko": {
-        "title": "제3회 5·18연구자대회 젠더 세션·사회비판 세션 기획 및 운영",
+        "title": "제3회 5·18연구자대회 젠더 세션·사회비판 세션 기획",
         "role": "오거나이저",
         "institution": "전남대학교 5·18연구소 주최, 광주",
         "date": "2026.5.21–22."
@@ -319,7 +319,7 @@
       "id": "pub-01",
       "type": "journal",
       "year": "2026",
-      "status": "under-review",
+      "status": "published",
       "tags": [
         "518",
         "korea",
@@ -350,7 +350,7 @@
       "id": "pub-02",
       "type": "journal",
       "year": "2026",
-      "status": "accepted",
+      "status": "published",
       "tags": [
         "518",
         "korea",
@@ -381,7 +381,7 @@
       "id": "pub-03",
       "type": "journal",
       "year": "2026",
-      "status": "accepted",
+      "status": "published",
       "tags": [
         "memory",
         "commemoration",
@@ -421,7 +421,6 @@
         "body-culture",
         "cultural-studies"
       ],
-      "doi": "http://doi.org/10.26743/kaod.2026.25.4.019",
       "ko": {
         "authors": "정성윤",
         "title": "'새로운 고전성'의 시작 ― 1929년 발터 베르텐이 기록한 독일 무용의 전환기",
@@ -430,7 +429,7 @@
       },
       "en": {
         "authors": "Chung, Sungyoun",
-        "title": "The Beginning of New Classicism: Walter Berten's 1929 Record of German Dance at a Turning Point",
+        "title": "The Beginning of a 'New Classicism': Walter Berten's Account of a Turning Point in German Dance in 1929",
         "journal": "Journal of the Korean Dance Studies Association",
         "volume": "Vol.25 No.4"
       },
@@ -453,7 +452,6 @@
         "transitional-justice",
         "comparative-studies"
       ],
-      "doi": "http://doi.org/10.62082/JDHR.2025.12.25.4.229",
       "ko": {
         "authors": "정성윤",
         "title": "용서 없는 화해는 가능한가: 한국 용서 화해 담론의 개념적 모순 분석",
@@ -462,7 +460,7 @@
       },
       "en": {
         "authors": "Chung, Sungyoun",
-        "title": "Reconciliation Without Forgiveness: Conceptual Contradictions in South Korean Discourse on Forgiveness and Reconciliation",
+        "title": "Can Reconciliation Exist without Forgiveness? Analyzing Conceptual Contradictions in Korean Forgiveness-Reconciliation Discourse",
         "journal": "Minjujuuiwa Inkkwon (Democracy and Human Rights)",
         "volume": "Vol.25 No.4"
       },
@@ -471,6 +469,36 @@
         "title": "Versöhnung ohne Vergebung? Konzeptuelle Widersprüche im koreanischen Versöhnungsdiskurs",
         "journal": "Minjujuuiwa Inkkwon",
         "volume": "Bd.25 Nr.4"
+      }
+    },
+    {
+      "id": "pub-06",
+      "type": "journal",
+      "year": "2021",
+      "status": "published",
+      "tags": [
+        "body-culture",
+        "cultural-studies",
+        "performing-arts",
+        "korea"
+      ],
+      "ko": {
+        "authors": "정성윤",
+        "title": "신체와 수행성을 통해 읽는 문화",
+        "journal": "오늘의 문예비평",
+        "volume": "Nr.123"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Cultural Phenomena through Body Culture and Performativity",
+        "journal": "Literary Criticism Today",
+        "volume": "No.123"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Kulturelle Phänomene durch Körperkultur und Performativität",
+        "journal": "Literary Criticism Today",
+        "volume": "Nr.123"
       }
     },
     {
@@ -485,22 +513,21 @@
         "japan",
         "comparative-studies"
       ],
-      "doi": "http://doi.org/10.19169/hd.2019.8.38.285",
       "ko": {
         "authors": "정성윤",
-        "title": "유엔기념공원의 중층적 정체성과 구조적 문제점",
+        "title": "유엔기념공원의 중층적 정체성과 발전 방안",
         "journal": "항도부산",
         "volume": "Nr.38"
       },
       "en": {
         "authors": "Chung, Sungyoun",
-        "title": "Multi-layered Identity of the UN Memorial Cemetery in Korea and its structural problem",
+        "title": "Multi-layered Identity of the UN Memorial Cemetery and Suggestions for its Improvement",
         "journal": "Hangdo-Busan",
         "volume": "No.38"
       },
       "de": {
         "authors": "Chung, Sungyoun",
-        "title": "Multi-layered Identity of the UN Memorial Cemetery in Korea and its structural problem",
+        "title": "Die vielschichtige Identität des UN-Gedächtnisfriedhofs und Vorschläge zu seiner Weiterentwicklung",
         "journal": "Hangdo-Busan",
         "volume": "Nr.38"
       }
@@ -533,6 +560,38 @@
         "authors": "Chung, Sungyoun",
         "title": "Geformte Freiheit. Volkstanz und Körperbild in der Jugendbewegung",
         "journal": "V&R Unipress (in: Baader/Kenkmann Hrg., Jugendbewegung im Kalten Krieg, Göttingen)"
+      }
+    },
+    {
+      "id": "pub-12",
+      "type": "book-chapter",
+      "year": "2026",
+      "status": "published",
+      "tags": [
+        "memory",
+        "commemoration",
+        "japan",
+        "korea",
+        "comparative-studies",
+        "history"
+      ],
+      "ko": {
+        "authors": "Chung, S.-Y., Hettling, M., & Schölz, T.",
+        "title": "Challenges of an untimely monument: The \"Mimizuka\" in Kyōto (1597)",
+        "journal": "In A. Kawakita, C. G. Krüger, & H. Hiramatsu (Eds.), Cooperation or coexistence? History of reconciliation in Europe and Asia. Vandenhoeck & Ruprecht Unipress",
+        "volume": ""
+      },
+      "en": {
+        "authors": "Chung, S.-Y., Hettling, M., & Schölz, T.",
+        "title": "Challenges of an untimely monument: The \"Mimizuka\" in Kyōto (1597)",
+        "journal": "In A. Kawakita, C. G. Krüger, & H. Hiramatsu (Eds.), Cooperation or coexistence? History of reconciliation in Europe and Asia. Vandenhoeck & Ruprecht Unipress",
+        "volume": ""
+      },
+      "de": {
+        "authors": "Chung, S.-Y., Hettling, M., & Schölz, T.",
+        "title": "Challenges of an untimely monument: The \"Mimizuka\" in Kyōto (1597)",
+        "journal": "In A. Kawakita, C. G. Krüger, & H. Hiramatsu (Eds.), Cooperation or coexistence? History of reconciliation in Europe and Asia. Vandenhoeck & Ruprecht Unipress",
+        "volume": ""
       }
     },
     {
@@ -638,21 +697,21 @@
         "transitional-justice",
         "comparative-studies"
       ],
-      "confirmed": true,
+      "confirmed": false,
       "ko": {
-        "title": "보편적 기억이 실패할 때: 광주, 위안부, 그리고 이행기 정의와 코스모폴리탄 기억에 대한 탈식민적 비판",
+        "title": "보편적 기억이 실패할 때: 과거사 문제의 두 가지 구성방식",
         "event": "동아시아 국제학술회의",
         "location": "삿포로대학, 삿포로",
         "date": "2026.9.12."
       },
       "en": {
-        "title": "When Universal Memory Fails: Gwangju, Comfort Women, and a Decolonial Critique of Transitional Justice and Cosmopolitan Memory",
+        "title": "When Universal Memory Fails: Two Configurations of Confronting the Past — 5.18 and the Japanese Military \"Comfort Women\" Issue",
         "event": "East Asian International Academic Conference",
         "location": "Sapporo University, Sapporo",
         "date": "12 Sep 2026"
       },
       "de": {
-        "title": "Wenn das universelle Gedächtnis versagt: Gwangju, Trostfrauen und eine dekoloniale Kritik an Transitional Justice und kosmopolitischem Gedächtnis",
+        "title": "When Universal Memory Fails: Two Configurations of Confronting the Past — 5.18 and the Japanese Military \"Comfort Women\" Issue",
         "event": "Internationale Ostasien-Konferenz",
         "location": "Universität Sapporo, Sapporo",
         "date": "12. Sep. 2026"
@@ -670,21 +729,21 @@
         "transitional-justice",
         "comparative-studies"
       ],
-      "confirmed": true,
+      "confirmed": false,
       "ko": {
-        "title": "보편적 기억이 실패할 때: 광주, 위안부, 그리고 이행기 정의와 코스모폴리탄 기억에 대한 탈식민적 비판",
+        "title": "보편적 기억이 실패할 때: 과거사 문제의 두 가지 구성방식",
         "event": "제13회 세계한국학대회",
         "location": "리츠메이칸대학, 교토",
         "date": "2026.9.5–6."
       },
       "en": {
-        "title": "When Universal Memory Fails: Gwangju, Comfort Women, and a Decolonial Critique of Transitional Justice and Cosmopolitan Memory",
+        "title": "When Universal Memory Fails: Two Configurations of Confronting the Past — 5.18 and the Japanese Military \"Comfort Women\" Issue",
         "event": "13th World Congress of Korean Studies",
         "location": "Ritsumeikan University, Kyoto",
         "date": "5–6 Sep 2026"
       },
       "de": {
-        "title": "Wenn das universelle Gedächtnis versagt (s.o.)",
+        "title": "When Universal Memory Fails: Two Configurations of Confronting the Past — 5.18 and the Japanese Military \"Comfort Women\" Issue",
         "event": "13. Weltkongress der Koreanistik",
         "location": "Ritsumeikan-Universität, Kyoto",
         "date": "5.–6. Sep. 2026"
@@ -701,7 +760,7 @@
         "germany",
         "cultural-studies"
       ],
-      "confirmed": true,
+      "confirmed": false,
       "ko": {
         "title": "아카이브로 읽는 번역된 몸: 독일에서의 한국 무용과 이애주",
         "event": "이애주춤아카이브 오픈 기념 학술토론회",
@@ -932,12 +991,12 @@
       "ko": {
         "title": "제1회 '임시수도 부산' 연구공모 우수상",
         "organization": "부산광역시",
-        "detail": "논문: 「유엔기념공원의 중층적 정체성과 구조적 문제점」"
+        "detail": "논문: 「유엔기념공원의 중층적 정체성과 발전 방안」"
       },
       "en": {
         "title": "1st Research Competition Award, 'Provisional Capital Busan'",
         "organization": "Busan Metropolitan Government",
-        "detail": "For \"Multi-layered Identity of the UN Memorial Cemetery in Korea and its structural problem\""
+        "detail": "For \"Multi-layered Identity of the U.N. Memorial Cemetery and suggestions for its improvement\""
       },
       "de": {
         "title": "Auszeichnung im 1. Forschungswettbewerb \"Provisional Capital Busan\"",
@@ -1026,7 +1085,8 @@
       "tra-01",
       "tra-02",
       "tra-03",
-      "awd-01"
+      "awd-01",
+      "pub-12"
     ],
     "dance": [
       "pub-04",
@@ -1052,6 +1112,7 @@
       "pub-01",
       "pub-02",
       "pub-05",
+      "pub-06",
       "pub-07",
       "pre-01",
       "pre-02",
@@ -1067,7 +1128,8 @@
       "awd-01",
       "edu-02",
       "edu-03",
-      "edu-04"
+      "edu-04",
+      "pub-12"
     ],
     "japan": [
       "pub-07",
@@ -1078,7 +1140,8 @@
       "pre-06",
       "res-03",
       "awd-02",
-      "edu-03"
+      "edu-03",
+      "pub-12"
     ],
     "transitional-justice": [
       "pub-02",
@@ -1089,6 +1152,7 @@
     ],
     "body-culture": [
       "pub-04",
+      "pub-06",
       "pub-08",
       "pre-07"
     ],
@@ -1101,11 +1165,13 @@
       "edu-01",
       "edu-02",
       "edu-03",
-      "edu-04"
+      "edu-04",
+      "pub-12"
     ],
     "cultural-studies": [
       "pub-03",
       "pub-04",
+      "pub-06",
       "pub-08",
       "pub-10",
       "pre-03",
@@ -1127,7 +1193,8 @@
       "tra-02",
       "tra-03",
       "awd-01",
-      "edu-02"
+      "edu-02",
+      "pub-12"
     ],
     "digital-humanities": [
       "pub-01"
@@ -1141,7 +1208,6 @@
       "res-04",
       "res-06"
     ],
-
     "comparative-studies": [
       "pub-02",
       "pub-03",
@@ -1154,7 +1220,8 @@
       "pre-05",
       "tra-01",
       "tra-02",
-      "edu-03"
+      "edu-03",
+      "pub-12"
     ]
   }
 }
