@@ -199,9 +199,9 @@ let checked = {};
 const ALL_TAGS=['518','memory','dance','germany','korea','japan','transitional-justice','body-culture','history','cultural-studies','weimar','commemoration','digital-humanities','data','performing-arts','comparative-studies'];
 
 const SEC_L={
-  ko:{education:'학력',research:'연구 활동',publications:'출판',presentations:'학술 발표',translations:'번역',awards:'수상 및 지원',languages:'언어 능력'},
-  en:{education:'Education',research:'Research',publications:'Publications',presentations:'Presentations',translations:'Translations',awards:'Awards & Grants',languages:'Language Skills'},
-  de:{education:'Ausbildung',research:'Forschung',publications:'Publikationen',presentations:'Vorträge',translations:'Übersetzungen',awards:'Auszeichnungen & Förderungen',languages:'Sprachkenntnisse'}
+  ko:{education:'학력',research:'연구 활동',publications:'출판',presentations:'학술 발표',discussants:'토론',translations:'번역',awards:'수상 및 지원',languages:'언어 능력'},
+  en:{education:'Education',research:'Research',publications:'Publications',presentations:'Presentations',discussants:'Discussant',translations:'Translations',awards:'Awards & Grants',languages:'Language Skills'},
+  de:{education:'Ausbildung',research:'Forschung',publications:'Publikationen',presentations:'Vorträge',discussants:'Diskutant',translations:'Übersetzungen',awards:'Auszeichnungen & Förderungen',languages:'Sprachkenntnisse'}
 };
 const PUB_T={
   ko:{journal:'학술지 논문','book-chapter':'단행본 챕터',magazine:'잡지·기고',thesis:'학위논문'},
@@ -217,7 +217,7 @@ const STAT={
 // ══ LOAD ══
 async function loadData(){
   try{
-    const res=await fetch('./cv_data.json?v='+Date.now());
+    const res=await fetch('./cv_data.json');
     CV=await res.json();
     initChecked();
     renderCVPage();
@@ -230,7 +230,7 @@ async function loadData(){
 }
 
 function initChecked(){
-  ['education','research','publications','presentations','translations','awards'].forEach(s=>{
+  ['education','research','publications','presentations','discussants','translations','awards'].forEach(s=>{
     (CV[s]||[]).forEach(i=>{checked[i.id]=true});
   });
   checked.languages=true;
@@ -308,7 +308,7 @@ function renderCVPage(){
       const sl=p.status&&p.status!=='published'?STAT_L[L][p.status]:'';
       const bc=p.status==='accepted'?'badge-accepted':p.status==='under-review'?'badge-review':p.status==='forthcoming'?'badge-forthcoming':'';
       const badge=sl?`<span class="badge ${bc}">${sl}</span>`:'';
-      const doi=p.doi?` DOI: <a href="${p.doi}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-size:12px">${p.doi}</a>`:'';
+      const doi=p.doi?` DOI: <a href="${p.doi}" style="color:var(--accent);font-size:12px">${p.doi}</a>`:'';
       pubHtml+=`<div class="pub-item">${d.authors}. (${p.year}). ${d.title}. <em>${d.journal}</em>${d.volume?' '+d.volume:''}.${doi}${badge}</div>`;
     });
   });
@@ -322,6 +322,16 @@ function renderCVPage(){
     return `<div class="pub-item">${d.title}. <em>${d.event}</em>${d.location?', '+d.location:''}${d.date?', '+d.date:''}.${conf}${co}</div>`;
   }).join('');
   h+=sec(SEC_L[L].presentations,preHtml);
+
+  // discussants
+  const discItems=CV.discussants||[];
+  if(discItems.length){
+    let discHtml=discItems.map(e=>{
+      const d=e[L]||e.ko;
+      return `<div class="pub-item">${d.title}. <em>${d.event}</em>${d.location?', '+d.location:''}${d.date?', '+d.date:''}.</div>`;
+    }).join('');
+    h+=sec(SEC_L[L].discussants,discHtml);
+  }
 
   // translations
   let traHtml='';let lastCol=null;
@@ -379,13 +389,13 @@ function toggleTag(tag){
 // ══ BUILDER SECTION CONTROLS ══
 function buildSecControls(){
   const L=bLang;
-  const secs=['education','research','publications','presentations','translations','awards','languages'];
+  const secs=['education','research','publications','presentations','discussants','translations','awards','languages'];
   let h='';
   secs.forEach(sec=>{
     const label=SEC_L[L][sec];
     if(sec==='languages'){
       h+=`<div class="sc-block"><div class="sc-head"><span class="sc-name">${label}</span></div>
-        <label class="item-row"><input type="checkbox" ${checked.languages?'checked':''} onchange="toggleLang(this.checked)">
+        <label class="item-row"><input type="checkbox" ${checked.languages?'checked':''} onchange="checked.languages=this.checked;renderBuilder()">
         <div class="item-row-text"><div class="item-row-title">${L==='ko'?'언어 능력 전체':L==='en'?'All language skills':'Alle Sprachkenntnisse'}</div></div></label></div>`;
       return;
     }
@@ -402,7 +412,7 @@ function buildSecControls(){
       const bc=item.status==='accepted'?'badge-accepted':item.status==='under-review'?'badge-review':item.status==='forthcoming'?'badge-forthcoming':'';
       const badge=sl?`<span class="badge ${bc}" style="font-size:8px">${sl}</span>`:'';
       const tags=(item.tags||[]).map(t=>`<span class="itag ${activeTags.has(t)?'active':''}">${t}</span>`).join('');
-      h+=`<label class="item-row"><input type="checkbox" ${checked[item.id]?'checked':''} onchange="toggleItem('${item.id}',this.checked)">
+      h+=`<label class="item-row"><input type="checkbox" ${checked[item.id]?'checked':''} onchange="checked['${item.id}']=this.checked;renderBuilder()">
         <div class="item-row-text">
           <div class="item-row-title">${title}${badge}</div>
           <div class="item-row-meta">${meta}</div>
@@ -414,8 +424,6 @@ function buildSecControls(){
   document.getElementById('secControls').innerHTML=h;
 }
 
-function toggleItem(id,val){checked[id]=val;renderBuilder();}
-function toggleLang(val){checked.languages=val;renderBuilder();}
 function toggleSec(sec,val){
   if(sec==='languages'){checked.languages=val;}
   else(CV[sec]||[]).forEach(i=>checked[i.id]=val);
@@ -468,7 +476,7 @@ function renderBuilder(){
         const sl=p.status&&p.status!=='published'?STAT[L][p.status]:'';
         const bc=p.status==='accepted'?'badge-accepted':p.status==='under-review'?'badge-review':p.status==='forthcoming'?'badge-forthcoming':'';
         const badge=sl?`<span class="badge ${bc}">${sl}</span>`:'';
-        const doi=p.doi?` DOI: <a href="${p.doi}" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-size:12px">${p.doi}</a>`:'';
+        const doi=p.doi?` DOI: <a href="${p.doi}" style="color:var(--accent);font-size:12px">${p.doi}</a>`:'';
         ph+=`<div class="pub-item">${d.authors}. (${p.year}). ${d.title}. <em>${d.journal}</em>${d.volume?' '+d.volume:''}.${doi}${badge}</div>`;
       });
     });
@@ -482,6 +490,12 @@ function renderBuilder(){
     const co=e.coauthors?`<br><span style="font-family:var(--sans);font-size:11px;color:var(--ink-light)">${L==='de'?'mit':'with'} ${e.coauthors}</span>`:'';
     return `<div class="pub-item">${d.title}. <em>${d.event}</em>${d.location?', '+d.location:''}${d.date?', '+d.date:''}.${conf}${co}</div>`;
   }).join(''));total+=preItems.length;}
+
+  const discSelItems=(CV.discussants||[]).filter(e=>checked[e.id]);
+  if(discSelItems.length){h+=bSec(SEC_L[L].discussants,discSelItems.map(e=>{
+    const d=e[L]||e.ko;
+    return `<div class="pub-item">${d.title}. <em>${d.event}</em>${d.location?', '+d.location:''}${d.date?', '+d.date:''}.</div>`;
+  }).join(''));total+=discSelItems.length;}
 
   const traItems=(CV.translations||[]).filter(e=>checked[e.id]);
   if(traItems.length){
@@ -588,6 +602,11 @@ async function exportWord(){
     const conf=e.confirmed?` (${L==='ko'?'일정 확정':L==='en'?'confirmed':'bestätigt'})`:'';
     lines.push(`${d.title}. ${d.event}${d.location?', '+d.location:''}${d.date?', '+d.date:''}.${conf}`);
     if(e.coauthors)lines.push(`  ${L==='de'?'mit':'with'} ${e.coauthors}`);
+  });
+
+  add('discussants',(CV.discussants||[]).filter(e=>checked[e.id]),e=>{
+    const d=e[L]||e.ko;
+    lines.push(`${d.title}. ${d.event}${d.location?', '+d.location:''}${d.date?', '+d.date:''}.`);
   });
 
   const traItems=(CV.translations||[]).filter(e=>checked[e.id]);
