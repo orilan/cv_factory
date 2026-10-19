@@ -194,7 +194,7 @@ let CV = null;
 let lang = 'ko';
 let bLang = 'ko';
 let activeTags = new Set();
-let checked = {};
+let sel = {};
 
 const ALL_TAGS=['518','memory','dance','germany','korea','japan','transitional-justice','body-culture','history','cultural-studies','weimar','commemoration','digital-humanities','data','performing-arts','comparative-studies'];
 
@@ -231,9 +231,9 @@ async function loadData(){
 
 function initChecked(){
   ['education','research','publications','presentations','discussants','translations','awards'].forEach(s=>{
-    (CV[s]||[]).forEach(i=>{checked[i.id]=true});
+    (CV[s]||[]).forEach(i=>{sel[i.id]=true});
   });
-  checked.languages=true;
+  sel.languages=true;
 }
 
 // ══ PAGE SWITCH ══
@@ -381,7 +381,7 @@ function buildTagFilters(){
 }
 function toggleTag(tag){
   if(activeTags.has(tag)){activeTags.delete(tag);}
-  else{activeTags.add(tag);(CV.tags_index[tag]||[]).forEach(id=>checked[id]=true);}
+  else{activeTags.add(tag);(CV.tags_index[tag]||[]).forEach(id=>sel[id]=true);}
   document.querySelectorAll('.tag-pill').forEach(b=>b.classList.toggle('active',activeTags.has(b.dataset.tag)));
   buildSecControls();renderBuilder();
 }
@@ -395,7 +395,7 @@ function buildSecControls(){
     const label=SEC_L[L][sec];
     if(sec==='languages'){
       h+=`<div class="sc-block"><div class="sc-head"><span class="sc-name">${label}</span></div>
-        <label class="item-row"><input type="checkbox" ${checked.languages?'checked':''} onchange="checked.languages=this.checked;renderBuilder()">
+        <label class="item-row"><input type="checkbox" ${sel.languages?'checked':''} onchange="sel.languages=this.checked;renderBuilder()">
         <div class="item-row-text"><div class="item-row-title">${L==='ko'?'언어 능력 전체':L==='en'?'All language skills':'Alle Sprachkenntnisse'}</div></div></label></div>`;
       return;
     }
@@ -412,7 +412,7 @@ function buildSecControls(){
       const bc=item.status==='accepted'?'badge-accepted':item.status==='under-review'?'badge-review':item.status==='forthcoming'?'badge-forthcoming':'';
       const badge=sl?`<span class="badge ${bc}" style="font-size:8px">${sl}</span>`:'';
       const tags=(item.tags||[]).map(t=>`<span class="itag ${activeTags.has(t)?'active':''}">${t}</span>`).join('');
-      h+=`<label class="item-row"><input type="checkbox" ${checked[item.id]?'checked':''} onchange="checked['${item.id}']=this.checked;renderBuilder()">
+      h+=`<label class="item-row"><input type="checkbox" ${sel[item.id]?'checked':''} onchange="sel['${item.id}']=this.checked;renderBuilder()">
         <div class="item-row-text">
           <div class="item-row-title">${title}${badge}</div>
           <div class="item-row-meta">${meta}</div>
@@ -425,12 +425,12 @@ function buildSecControls(){
 }
 
 function toggleSec(sec,val){
-  if(sec==='languages'){checked.languages=val;}
-  else(CV[sec]||[]).forEach(i=>checked[i.id]=val);
+  if(sec==='languages'){sel.languages=val;}
+  else(CV[sec]||[]).forEach(i=>sel[i.id]=val);
   buildSecControls();renderBuilder();
 }
-function bSelectAll(){Object.keys(checked).forEach(k=>checked[k]=true);buildSecControls();renderBuilder();}
-function bClearAll(){Object.keys(checked).forEach(k=>checked[k]=false);buildSecControls();renderBuilder();}
+function bSelectAll(){Object.keys(sel).forEach(k=>sel[k]=true);buildSecControls();renderBuilder();}
+function bClearAll(){Object.keys(sel).forEach(k=>sel[k]=false);buildSecControls();renderBuilder();}
 
 // ══ BUILDER PREVIEW RENDER ══
 function renderBuilder(){
@@ -445,7 +445,7 @@ function renderBuilder(){
     <div style="font-family:var(--sans);font-size:11px;color:var(--ink-mid)">${p.email} | ${p.phone}</div>
   </div>`;
 
-  const eduItems=(CV.education||[]).filter(e=>checked[e.id]);
+  const eduItems=(CV.education||[]).filter(e=>sel[e.id]);
   if(eduItems.length){h+=bSec(SEC_L[L].education,eduItems.map(e=>{
     const d=e[L]||e.ko;
     return `<div class="entry"><div>
@@ -455,7 +455,7 @@ function renderBuilder(){
     </div><div class="entry-date">${e.period}</div></div>`;
   }).join(''));total+=eduItems.length;}
 
-  const resItems=(CV.research||[]).filter(e=>checked[e.id]);
+  const resItems=(CV.research||[]).filter(e=>sel[e.id]);
   if(resItems.length){h+=bSec(SEC_L[L].research,resItems.map(e=>{
     const d=e[L]||e.ko;
     return `<div class="entry"><div>
@@ -464,7 +464,7 @@ function renderBuilder(){
     </div><div class="entry-date">${e.period}</div></div>`;
   }).join(''));total+=resItems.length;}
 
-  const pubItems=(CV.publications||[]).filter(e=>checked[e.id]);
+  const pubItems=(CV.publications||[]).filter(e=>sel[e.id]);
   if(pubItems.length){
     let ph='';
     ['journal','book-chapter','magazine','thesis'].forEach(type=>{
@@ -483,7 +483,7 @@ function renderBuilder(){
     h+=bSec(SEC_L[L].publications,ph);total+=pubItems.length;
   }
 
-  const preItems=(CV.presentations||[]).filter(e=>checked[e.id]);
+  const preItems=(CV.presentations||[]).filter(e=>sel[e.id]);
   if(preItems.length){h+=bSec(SEC_L[L].presentations,preItems.map(e=>{
     const d=e[L]||e.ko;
     const conf=e.confirmed?` <span style="font-size:11px;color:var(--success)">(${L==='ko'?'일정 확정':L==='en'?'confirmed':'bestätigt'})</span>`:'';
@@ -491,13 +491,13 @@ function renderBuilder(){
     return `<div class="pub-item">${d.title}. <em>${d.event}</em>${d.location?', '+d.location:''}${d.date?', '+d.date:''}.${conf}${co}</div>`;
   }).join(''));total+=preItems.length;}
 
-  const discSelItems=(CV.discussants||[]).filter(e=>checked[e.id]);
+  const discSelItems=(CV.discussants||[]).filter(e=>sel[e.id]);
   if(discSelItems.length){h+=bSec(SEC_L[L].discussants,discSelItems.map(e=>{
     const d=e[L]||e.ko;
     return `<div class="pub-item">${d.title}. <em>${d.event}</em>${d.location?', '+d.location:''}${d.date?', '+d.date:''}.</div>`;
   }).join(''));total+=discSelItems.length;}
 
-  const traItems=(CV.translations||[]).filter(e=>checked[e.id]);
+  const traItems=(CV.translations||[]).filter(e=>sel[e.id]);
   if(traItems.length){
     let th='';let lastCol=null;
     traItems.forEach(e=>{
@@ -511,7 +511,7 @@ function renderBuilder(){
     h+=bSec(SEC_L[L].translations,th);total+=traItems.length;
   }
 
-  const awdItems=(CV.awards||[]).filter(e=>checked[e.id]);
+  const awdItems=(CV.awards||[]).filter(e=>sel[e.id]);
   if(awdItems.length){h+=bSec(SEC_L[L].awards,awdItems.map(e=>{
     const d=e[L]||e.ko;
     return `<div class="entry"><div>
@@ -520,7 +520,7 @@ function renderBuilder(){
     </div><div class="entry-date">${e.year}</div></div>`;
   }).join(''));total+=awdItems.length;}
 
-  if(checked.languages){
+  if(sel.languages){
     const cards=(CV.languages||[]).map(l=>{
       const nm=l.language.split(' / ')[L==='ko'?0:L==='en'?1:2]||l.language.split(' / ')[0];
       const lv=l['level_'+L]||l.level_ko;
@@ -612,20 +612,20 @@ async function exportWord(){
     lines.push('');
   };
 
-  add('education',(CV.education||[]).filter(e=>checked[e.id]),e=>{
+  add('education',(CV.education||[]).filter(e=>sel[e.id]),e=>{
     const d=e[L]||e.ko;
     lines.push(`${d.degree}${d.field?' — '+d.field:''}  (${e.period})`);
     lines.push(`  ${d.institution}${d.location?', '+d.location:''}`);
     if(d.thesis)lines.push(`  ${L==='de'?'Abschlussarbeit':L==='en'?'Thesis':'석사논문'}: ${d.thesis}`);
   });
 
-  add('research',(CV.research||[]).filter(e=>checked[e.id]),e=>{
+  add('research',(CV.research||[]).filter(e=>sel[e.id]),e=>{
     const d=e[L]||e.ko;
     lines.push(`${d.title} — ${d.role}  (${e.period})`);
     lines.push(`  ${d.institution}${d.date?', '+d.date:''}`);
   });
 
-  const pubItems=(CV.publications||[]).filter(e=>checked[e.id]);
+  const pubItems=(CV.publications||[]).filter(e=>sel[e.id]);
   if(pubItems.length){
     lines.push('━━ '+SEC_L[L]['publications'].toUpperCase()+' ━━');
     ['journal','book-chapter','magazine','thesis'].forEach(type=>{
@@ -642,19 +642,19 @@ async function exportWord(){
     lines.push('');
   }
 
-  add('presentations',(CV.presentations||[]).filter(e=>checked[e.id]),e=>{
+  add('presentations',(CV.presentations||[]).filter(e=>sel[e.id]),e=>{
     const d=e[L]||e.ko;
     const conf=e.confirmed?` (${L==='ko'?'일정 확정':L==='en'?'confirmed':'bestätigt'})`:'';
     lines.push(`${d.title}. ${d.event}${d.location?', '+d.location:''}${d.date?', '+d.date:''}.${conf}`);
     if(e.coauthors)lines.push(`  ${L==='de'?'mit':'with'} ${e.coauthors}`);
   });
 
-  add('discussants',(CV.discussants||[]).filter(e=>checked[e.id]),e=>{
+  add('discussants',(CV.discussants||[]).filter(e=>sel[e.id]),e=>{
     const d=e[L]||e.ko;
     lines.push(`${d.title}. ${d.event}${d.location?', '+d.location:''}${d.date?', '+d.date:''}.`);
   });
 
-  const traItems=(CV.translations||[]).filter(e=>checked[e.id]);
+  const traItems=(CV.translations||[]).filter(e=>sel[e.id]);
   if(traItems.length){
     lines.push('━━ '+SEC_L[L]['translations'].toUpperCase()+' ━━');
     let lastCol=null;
@@ -668,13 +668,13 @@ async function exportWord(){
     lines.push('');
   }
 
-  add('awards',(CV.awards||[]).filter(e=>checked[e.id]),e=>{
+  add('awards',(CV.awards||[]).filter(e=>sel[e.id]),e=>{
     const d=e[L]||e.ko;
     lines.push(`${d.title}  (${e.year})`);
     lines.push(`  ${d.organization}${d.detail?' | '+d.detail:''}`);
   });
 
-  if(checked.languages){
+  if(sel.languages){
     lines.push('━━ '+SEC_L[L]['languages'].toUpperCase()+' ━━');
     CV.languages.forEach(l=>{
       const nm=l.language.split(' / ')[L==='ko'?0:L==='en'?1:2]||l.language.split(' / ')[0];
