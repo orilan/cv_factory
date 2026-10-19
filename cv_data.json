@@ -159,6 +159,33 @@
   ],
   "research": [
     {
+      "id": "res-07",
+      "period": "2026",
+      "tags": [
+        "518",
+        "korea",
+        "history"
+      ],
+      "ko": {
+        "title": "5·18 구술 채록 용역",
+        "role": "연구원",
+        "institution": "전남대학교 5·18연구소",
+        "date": "옛전남도청복원추진단 발주"
+      },
+      "en": {
+        "title": "5·18 Oral History Documentation Project",
+        "role": "Researcher",
+        "institution": "May 18 Institute, Chonnam National University",
+        "date": "Commissioned by the Old Jeollanamdo Provincial Hall Restoration Committee"
+      },
+      "de": {
+        "title": "Zeitzeugen-Dokumentationsprojekt 5·18",
+        "role": "Mitarbeiter",
+        "institution": "5·18 Institut, Chonnam National University",
+        "date": "Im Auftrag des Ausschusses zur Wiederherstellung des alten Provinzamtes Jeollanamdo"
+      }
+    },
+    {
       "id": "res-00",
       "period": "2026",
       "tags": [
@@ -1035,6 +1062,27 @@
       "de": {
         "publisher": "Korea Democracy Foundation"
       }
+    },
+    {
+      "id": "tra-04",
+      "year": "2027",
+      "direction": "en→ko",
+      "original_author": "Avery Gordon",
+      "original_title": "Ghostly Matters",
+      "status": "forthcoming",
+      "tags": [
+        "memory",
+        "cultural-studies"
+      ],
+      "ko": {
+        "publisher": "현실문화"
+      },
+      "en": {
+        "publisher": "Hyeonsil Munhwa"
+      },
+      "de": {
+        "publisher": "Hyeonsil Munhwa"
+      }
     }
   ],
   "awards": [
@@ -1119,6 +1167,7 @@
   ],
   "tags_index": {
     "518": [
+      "res-07",
       "pub-00",
       "res-00",
       "pub-01",
@@ -1149,7 +1198,8 @@
       "tra-02",
       "tra-03",
       "awd-01",
-      "pub-12"
+      "pub-12",
+      "tra-04"
     ],
     "dance": [
       "pub-04",
@@ -1173,6 +1223,7 @@
       "edu-02"
     ],
     "korea": [
+      "res-07",
       "res-00",
       "pub-01",
       "pub-02",
@@ -1223,6 +1274,7 @@
       "pre-07"
     ],
     "history": [
+      "res-07",
       "pub-00",
       "pub-04",
       "pub-08",
@@ -1244,7 +1296,8 @@
       "pub-10",
       "pre-03",
       "tra-01",
-      "res-05"
+      "res-05",
+      "tra-04"
     ],
     "weimar": [
       "pub-04",
