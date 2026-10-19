@@ -164,7 +164,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16
         <div class="export-row">
           <button class="ebtn" onclick="bSelectAll()">전체선택</button>
           <button class="ebtn" onclick="bClearAll()">해제</button>
-          <button class="ebtn ebtn-primary" onclick="window.print()">⎙ PDF</button>
+          <button class="ebtn ebtn-primary" onclick="exportPDF()">⎙ PDF</button>
           <button class="ebtn ebtn-word" onclick="exportWord()">W ↓</button>
         </div>
       </div>
@@ -540,6 +540,51 @@ function renderBuilder(){
 
 function bSec(title,content){
   return `<div style="margin-bottom:32px"><div class="sec-title">${title}</div>${content}</div>`;
+}
+
+// ══ PDF EXPORT ══
+function exportPDF(){
+  if(!CV){alert('데이터 로딩 중입니다.');return;}
+  const content=document.getElementById('builderOut').innerHTML;
+  const fontUrl='https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;600&display=swap';
+  const css=`
+    @import url('${fontUrl}');
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --ink:#1c1c1c;--ink-mid:#3a3a3a;--ink-light:#6b6b6b;--ink-faint:#999;
+      --accent:#2c5f9e;--accent-bg:#e8f0fb;--success:#2a7a4b;--success-bg:#e6f4ec;
+      --warn:#b07800;--warn-bg:#fdf3dc;--rule:#d8d8d4;--bg:#faf9f6;--paper:#fff;
+      --serif:'EB Garamond','Noto Serif KR',Georgia,serif;
+      --sans:'Noto Sans KR',sans-serif;
+    }
+    body{font-family:var(--serif);font-size:15px;line-height:1.75;color:var(--ink);background:#fff;padding:2cm}
+    .sec-title{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding-bottom:7px;border-bottom:.5px solid var(--rule)}
+    .subcat{font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid);margin:16px 0 8px;padding-left:10px;border-left:2px solid var(--accent)}
+    .entry{display:grid;grid-template-columns:1fr auto;gap:0 20px;margin-bottom:14px;align-items:start}
+    .entry-title{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:2px;line-height:1.4}
+    .entry-sub{font-family:var(--sans);font-size:11px;color:var(--ink-light);line-height:1.5}
+    .entry-date{font-family:var(--sans);font-size:11px;color:var(--ink-faint);white-space:nowrap;padding-top:3px}
+    .pub-item{font-size:14px;color:var(--ink-mid);line-height:1.75;margin-bottom:9px;padding-left:14px;position:relative}
+    .pub-item::before{content:'';position:absolute;left:0;top:10px;width:4px;height:4px;border-radius:50%;background:var(--rule)}
+    .pub-note{font-family:var(--sans);font-size:11px;color:var(--ink-faint);font-style:italic;padding-left:14px;margin-bottom:8px}
+    .badge{display:inline-block;font-family:var(--sans);font-size:9px;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle}
+    .badge-accepted{background:var(--success-bg);color:var(--success)}
+    .badge-review{background:var(--warn-bg);color:var(--warn)}
+    .badge-forthcoming{background:var(--accent-bg);color:var(--accent)}
+    .lang-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .lang-card{border:.5px solid var(--rule);border-radius:4px;padding:10px 14px}
+    .lang-card-name{font-family:var(--sans);font-size:12px;font-weight:500;color:var(--ink)}
+    .lang-card-level{font-family:var(--sans);font-size:11px;color:var(--ink-light)}
+    .lang-card-cert{font-family:var(--sans);font-size:10px;color:var(--accent)}
+    div[style*="border-bottom:1.5px"]{margin-bottom:28px}
+    @page{margin:2cm}
+    @media print{body{padding:0}}
+  `;
+  const win=window.open('','_blank','width=900,height=700');
+  win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>CV</title><style>${css}</style></head><body>${content}</body></html>`);
+  win.document.close();
+  // 폰트 로드 후 인쇄
+  win.onload=function(){setTimeout(()=>{win.focus();win.print();win.close();},600)};
 }
 
 // ══ WORD EXPORT ══
