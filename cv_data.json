@@ -343,34 +343,34 @@
   ],
   "publications": [
     {
-      "id": "pub-01",
+      "id": "pub-00",
       "type": "journal",
-      "year": "2026",
-      "status": "published",
+      "year": "2027",
+      "status": "forthcoming",
       "tags": [
         "518",
-        "korea",
-        "data",
-        "digital-humanities",
-        "memory"
+        "memory",
+        "germany",
+        "commemoration",
+        "history"
       ],
       "ko": {
         "authors": "정성윤",
-        "title": "이론 주도적 인문 데이터 구축하기: 5·18 공식 기념 연설 코퍼스 사례",
-        "journal": "민주주의와 인권",
-        "volume": "Vol.26 No.2"
+        "title": "Der Gwangjuprotest 1980 und die Kontinuität der Erinnerung",
+        "journal": "Totalitarismus und Demokratie",
+        "volume": "Vol.24, No.2"
       },
       "en": {
         "authors": "Chung, Sungyoun",
-        "title": "Theory-driven Humanities Data Construction: The Case of the May 18 Official Commemorative Speech Corpus",
-        "journal": "Minjujuuiwa Inkkwon (Democracy and Human Rights)",
-        "volume": "Vol.26 No.2"
+        "title": "Der Gwangjuprotest 1980 und die Kontinuität der Erinnerung",
+        "journal": "Totalitarismus und Demokratie",
+        "volume": "Vol.24, No.2"
       },
       "de": {
         "authors": "Chung, Sungyoun",
-        "title": "Theoriegeleiteter Aufbau geisteswissenschaftlicher Daten: Der Fall des Korpus offizieller 5·18-Gedenkreden",
-        "journal": "Minjujuuiwa Inkkwon",
-        "volume": "Bd.26 Nr.2"
+        "title": "Der Gwangjuprotest 1980 und die Kontinuität der Erinnerung",
+        "journal": "Totalitarismus und Demokratie",
+        "volume": "Bd.24, Nr.2"
       }
     },
     {
@@ -402,6 +402,37 @@
         "title": "Vergleichende Analyse der Diskursstrukturen in offiziellen Gedenkreden zum 18. Mai: Regimespezifische Differenzierung des Transitional-Justice-Diskurses",
         "journal": "Gieok gwa Jeonmang",
         "volume": "Nr.55"
+      }
+    },
+    {
+      "id": "pub-01",
+      "type": "journal",
+      "year": "2026",
+      "status": "published",
+      "tags": [
+        "518",
+        "korea",
+        "data",
+        "digital-humanities",
+        "memory"
+      ],
+      "ko": {
+        "authors": "정성윤",
+        "title": "이론 주도적 인문 데이터 구축하기: 5·18 공식 기념 연설 코퍼스 사례",
+        "journal": "민주주의와 인권",
+        "volume": "Vol.26 No.2"
+      },
+      "en": {
+        "authors": "Chung, Sungyoun",
+        "title": "Theory-driven Humanities Data Construction: The Case of the May 18 Official Commemorative Speech Corpus",
+        "journal": "Minjujuuiwa Inkkwon (Democracy and Human Rights)",
+        "volume": "Vol.26 No.2"
+      },
+      "de": {
+        "authors": "Chung, Sungyoun",
+        "title": "Theoriegeleiteter Aufbau geisteswissenschaftlicher Daten: Der Fall des Korpus offizieller 5·18-Gedenkreden",
+        "journal": "Minjujuuiwa Inkkwon",
+        "volume": "Bd.26 Nr.2"
       }
     },
     {
@@ -1017,7 +1048,7 @@
         "korea"
       ],
       "ko": {
-        "title": "제1회 '임시수도 부산' 연구공모 우수상",
+        "title": "제1회 '피란수도 부산' 연구공모 우수상",
         "organization": "부산광역시",
         "detail": "논문: 「유엔기념공원의 중층적 정체성과 발전 방안」"
       },
@@ -1088,6 +1119,7 @@
   ],
   "tags_index": {
     "518": [
+      "pub-00",
       "res-00",
       "pub-01",
       "pub-02",
@@ -1099,6 +1131,7 @@
       "res-02"
     ],
     "memory": [
+      "pub-00",
       "res-00",
       "pub-02",
       "pub-03",
@@ -1126,6 +1159,7 @@
       "res-04"
     ],
     "germany": [
+      "pub-00",
       "pub-03",
       "pub-04",
       "pub-08",
@@ -1160,7 +1194,8 @@
       "edu-02",
       "edu-03",
       "edu-04",
-      "pub-12"
+      "pub-12",
+      "dis-01"
     ],
     "japan": [
       "pub-07",
@@ -1188,6 +1223,7 @@
       "pre-07"
     ],
     "history": [
+      "pub-00",
       "pub-04",
       "pub-08",
       "pub-11",
@@ -1197,7 +1233,8 @@
       "edu-02",
       "edu-03",
       "edu-04",
-      "pub-12"
+      "pub-12",
+      "dis-01"
     ],
     "cultural-studies": [
       "pub-03",
@@ -1215,6 +1252,7 @@
       "pre-07"
     ],
     "commemoration": [
+      "pub-00",
       "pub-07",
       "pub-09",
       "pub-11",
@@ -1252,7 +1290,37 @@
       "tra-01",
       "tra-02",
       "edu-03",
-      "pub-12"
+      "pub-12",
+      "dis-01"
     ]
-  }
+  },
+  "discussants": [
+    {
+      "id": "dis-01",
+      "year": "2026",
+      "tags": [
+        "korea",
+        "comparative-studies",
+        "history"
+      ],
+      "ko": {
+        "title": "토론자",
+        "event": "2026년 추계 호남·제주 인문사회연구소 공동학술대회 \"동아시아 냉전과 평화, 민주와 공존\"",
+        "location": "순천대학교",
+        "date": "2026.10.16."
+      },
+      "en": {
+        "title": "Discussant",
+        "event": "2026 Autumn Honam·Jeju Humanities and Social Sciences Research Institutes Joint Conference \"East Asian Cold War, Peace, Democracy, and Coexistence\"",
+        "location": "Sunchon National University",
+        "date": "16 Oct 2026"
+      },
+      "de": {
+        "title": "Diskutant",
+        "event": "Gemeinsame Herbstkonferenz der Honam·Jeju-Forschungsinstitute 2026 \"Kalter Krieg, Frieden, Demokratie und Koexistenz in Ostasien\"",
+        "location": "Sunchon National University",
+        "date": "16. Okt. 2026"
+      }
+    }
+  ]
 }
