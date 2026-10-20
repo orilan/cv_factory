@@ -291,7 +291,7 @@ function renderCVPage(){
   h+=sec(SEC_L[L].research,(CV.research||[]).map(e=>{
     const d=e[L]||e.ko;
     return `<div class="entry"><div>
-      <div class="entry-title">${d.title} — <span style="font-weight:400">${d.role}</span></div>
+      <div class="entry-title">${d.title}${d.role?' — <span style="font-weight:400">'+d.role+'</span>':''}</div>
       <div class="entry-sub">${d.institution}${d.date?', '+d.date:''}</div>
     </div><div class="entry-date">${e.period}</div></div>`;
   }).join(''));
@@ -459,7 +459,7 @@ function renderBuilder(){
   if(resItems.length){h+=bSec(SEC_L[L].research,resItems.map(e=>{
     const d=e[L]||e.ko;
     return `<div class="entry"><div>
-      <div class="entry-title">${d.title} — <span style="font-weight:400">${d.role}</span></div>
+      <div class="entry-title">${d.title}${d.role?' — <span style="font-weight:400">'+d.role+'</span>':''}</div>
       <div class="entry-sub">${d.institution}${d.date?', '+d.date:''}</div>
     </div><div class="entry-date">${e.period}</div></div>`;
   }).join(''));total+=resItems.length;}
@@ -621,7 +621,7 @@ async function exportWord(){
 
   add('research',(CV.research||[]).filter(e=>sel[e.id]),e=>{
     const d=e[L]||e.ko;
-    lines.push(`${d.title} — ${d.role}  (${e.period})`);
+    lines.push(`${d.title}${d.role?' — '+d.role:''}  (${e.period})`);
     lines.push(`  ${d.institution}${d.date?', '+d.date:''}`);
   });
 
